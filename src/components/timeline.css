@@ -1,0 +1,206 @@
+.timeline-section {
+    background-color: #1a1a1a;
+    padding: 6rem 2rem;
+    min-height: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  }
+  
+  .timeline-main-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+  }
+  
+  .timeline-main-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #4CAF50; /* Agriculture green */
+    margin: 1rem auto 0;
+  }
+  
+  .timeline-container {
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #4CAF50; /* Agriculture green */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .timeline-events {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%; /* Ensure it fits within the container */
+    padding: 0 40px;
+  }
+  
+  .timeline-event {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    margin: 0 20px;
+  }
+  
+  .timeline-content {
+    position: absolute;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-event:nth-child(even) .timeline-content {
+    bottom: calc(100% + 20px);
+  }
+  
+  .timeline-event:nth-child(odd) .timeline-content {
+    top: calc(100% + 20px);
+  }
+  
+  .timeline-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+    text-transform: uppercase;
+    color: #4CAF50; /* Agriculture green */
+  }
+  
+  .timeline-date {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+    background-color: rgba(76, 175, 80, 0.2); /* Agriculture green */
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  
+  .timeline-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50; /* Agriculture green */
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.3); /* Agriculture green */
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-event:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0.3); /* Agriculture green */
+  }
+  
+  .timeline-connector {
+    position: absolute;
+    width: 2px;
+    background-color: #4CAF50; /* Agriculture green */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-event:nth-child(even) .timeline-connector {
+    top: 0;
+    bottom: 50%;
+  }
+  
+  .timeline-event:nth-child(odd) .timeline-connector {
+    top: 50%;
+    bottom: 0;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .timeline-event {
+    opacity: 0;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .timeline-main-title {
+      font-size: 3rem;
+    }
+  
+    .timeline-container {
+      padding: 3rem 1.5rem;
+    }
+  
+    .timeline-event {
+      width: 200px;
+      margin: 0 15px;
+    }
+  
+    .timeline-content {
+      width: 180px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-main-title {
+      font-size: 2.5rem;
+    }
+  
+    .timeline-container {
+      padding: 2rem 1rem;
+    }
+  
+    .timeline-event {
+      width: 180px;
+      margin: 0 10px;
+    }
+  
+    .timeline-content {
+      width: 160px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .timeline-main-title {
+      font-size: 2rem;
+    }
+  
+    .timeline-title {
+      font-size: 0.9rem;
+    }
+  
+    .timeline-date {
+      font-size: 0.8rem;
+    }
+  }

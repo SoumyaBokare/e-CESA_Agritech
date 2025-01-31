@@ -1,0 +1,171 @@
+.header-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.header-container h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.header-container h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  
+}
+
+.domains-title{
+  text-align:center !important;
+  align-items: center;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #4CAF50; /* Agriculture green */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.8s ease; /* Smoother animation */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease, opacity 0.8s ease; /* Smoother animation */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.2); /* Scale the image */
+  opacity: 0.9;
+}
+
+.gallery-item:hover {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2); /* Scale the container */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease; /* Smoother animation */
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.text .more-info {
+  display: none;
+}
+
+.gallery-item:hover .text .more-info {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Specific grid positions */
+.farm {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.soil {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+
+.robot {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.usb {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+.drone {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 150px);
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .farm {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .soil {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .robot {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .usb {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .drone {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+  }
+}

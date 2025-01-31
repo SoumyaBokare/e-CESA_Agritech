@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+15&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+html, body {
+  font-family: 'Kanit', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.header {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+.header h2 {
+  margin: 10px 0 20px;
+  font-size: 2em;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #4CAF50;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.registration-closes {
+  margin-top: 20px;
+}
+
+.countdown-timer {
+  font-size: 1.5em;
+}
+
+.about, .theme, .timeline, .prizes, .rules, .sponsors {
+  padding: 20px;
+  text-align: center;
+}
+
+.about h2, .theme h2, .timeline h2, .prizes h2, .rules h2, .sponsors h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
