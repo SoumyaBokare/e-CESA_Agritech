@@ -1,101 +1,89 @@
-.prizes-section {
-    background-color: #1a1a1a;
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-  
-  .prizes-title {
-    color: #ffffff;
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 4rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-  }
-  
-  .prizes-title::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #4CAF50;
-    margin: 1rem auto 0;
-  }
-  
-  .prizes-list {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .prize-item {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2rem;
-    width: 300px;
-    transition: all 0.3s ease;
-  }
-  
-  .prize-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
-  }
-  
-  .prize-icon {
-    font-size: 3rem;
-    color: #4CAF50;
-    margin-bottom: 1rem;
-  }
-  
-  .prize-place {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .prize-amount {
-    color: #4CAF50;
-    font-size: 2rem;
-    font-weight: 800;
-  }
-  
-  @media (max-width: 1024px) {
-    .prizes-list {
-      flex-wrap: wrap;
-    }
-  
-    .prize-item {
-      width: calc(50% - 1rem);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .prizes-title {
-      font-size: 3rem;
-    }
-  
-    .prize-item {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .prizes-title {
-      font-size: 2.5rem;
-    }
-  
-    .prize-place {
-      font-size: 1.3rem;
-    }
-  
-    .prize-amount {
-      font-size: 1.8rem;
-    }
-  }
-  
-  
+.prize-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.heading {
+  margin-bottom: 40px;
+}
+
+#podium-box {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gold {
+  background-color: #ffd700;
+}
+
+.silver {
+  background-color: #c0c0c0;
+}
+
+.bronze {
+  background-color: #cd7f32;
+}
+
+#first-step {
+  height: 200px; /* Tallest */
+}
+
+#second-step {
+  height: 150px; /* Less tall */
+}
+
+#third-step {
+  height: 100px; /* Shortest */
+}
+
+.trophy {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.prize-details {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.prize-type {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.prize-extras {
+  font-size: 1rem;
+  color: #666;
+}
+
+.prize-label {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}

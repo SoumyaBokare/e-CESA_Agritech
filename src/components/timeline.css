@@ -1,206 +1,176 @@
-.timeline-section {
-    background-color: #1a1a1a;
-    padding: 6rem 2rem;
-    min-height: 400px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* Container */
+.timeline-container {
+  width: 100%;
+  height: 200vh;
+  position: relative;
+  background: linear-gradient(to bottom, #eaf6f6, #bde0fe);
+  overflow: hidden;
+}
 
+/* Tap */
+.tap {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: gray;
+  border-radius: 10px;
+  transform: translateX(-50%);
+}
+
+.tap-water {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 10px;
+  height: 100px;
+  background: #3498db;
+  border-radius: 5px;
+  animation: waterFlow 2s infinite alternate;
+}
+
+@keyframes waterFlow {
+  0% {
+    height: 10px;
   }
-  
-  .timeline-main-title {
-    color: #ffffff;
-    text-align: center;
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 4rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
+  100% {
+    height: 100px;
   }
-  
-  .timeline-main-title::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 4px;
-    background-color: #4CAF50; /* Agriculture green */
-    margin: 1rem auto 0;
+}
+
+/* Water Drops */
+.water-drop {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #3498db;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.8;
+  animation: dropFall 3s infinite linear;
+}
+
+@keyframes dropFall {
+  0% {
+    top: 60px;
+    opacity: 1;
   }
-  
-  .timeline-container {
-    border-radius: 30px;
-    padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .timeline-line {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background-color: #4CAF50; /* Agriculture green */
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .timeline-events {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 100%; /* Ensure it fits within the container */
-    padding: 0 40px;
-  }
-  
-  .timeline-event {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 240px;
-    margin: 0 20px;
-  }
-  
-  .timeline-content {
-    position: absolute;
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.75rem;
-    color: #ffffff;
-    transition: all 0.3s ease;
-  }
-  
-  .timeline-event:nth-child(even) .timeline-content {
-    bottom: calc(100% + 20px);
-  }
-  
-  .timeline-event:nth-child(odd) .timeline-content {
-    top: calc(100% + 20px);
-  }
-  
-  .timeline-title {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0;
-    text-transform: uppercase;
-    color: #4CAF50; /* Agriculture green */
-  }
-  
-  .timeline-date {
-    font-size: 0.9rem;
-    margin: 0;
-    opacity: 0.9;
-    background-color: rgba(76, 175, 80, 0.2); /* Agriculture green */
-    padding: 4px 12px;
-    border-radius: 20px;
-  }
-  
-  .timeline-dot {
-    width: 20px;
-    height: 20px;
-    background-color: #4CAF50; /* Agriculture green */
-    border-radius: 50%;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.3); /* Agriculture green */
-    transition: all 0.3s ease;
-  }
-  
-  .timeline-event:hover .timeline-dot {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0.3); /* Agriculture green */
-  }
-  
-  .timeline-connector {
-    position: absolute;
-    width: 2px;
-    background-color: #4CAF50; /* Agriculture green */
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .timeline-event:nth-child(even) .timeline-connector {
-    top: 0;
-    bottom: 50%;
-  }
-  
-  .timeline-event:nth-child(odd) .timeline-connector {
-    top: 50%;
-    bottom: 0;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fade-in {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-  
-  .timeline-event {
+  100% {
+    top: 200vh;
     opacity: 0;
   }
-  
-  /* Responsive design */
-  @media (max-width: 1024px) {
-    .timeline-main-title {
-      font-size: 3rem;
-    }
-  
-    .timeline-container {
-      padding: 3rem 1.5rem;
-    }
-  
-    .timeline-event {
-      width: 200px;
-      margin: 0 15px;
-    }
-  
-    .timeline-content {
-      width: 180px;
-    }
+}
+
+.water-drop:nth-child(1) { left: 48%; animation-delay: 0s; }
+.water-drop:nth-child(2) { left: 52%; animation-delay: 0.3s; }
+.water-drop:nth-child(3) { left: 49%; animation-delay: 0.6s; }
+.water-drop:nth-child(4) { left: 51%; animation-delay: 0.9s; }
+.water-drop:nth-child(5) { left: 47%; animation-delay: 1.2s; }
+.water-drop:nth-child(6) { left: 53%; animation-delay: 1.5s; }
+.water-drop:nth-child(7) { left: 50%; animation-delay: 1.8s; }
+.water-drop:nth-child(8) { left: 46%; animation-delay: 2.1s; }
+.water-drop:nth-child(9) { left: 54%; animation-delay: 2.4s; }
+.water-drop:nth-child(10) { left: 45%; animation-delay: 2.7s; }
+.water-drop:nth-child(11) { left: 55%; animation-delay: 3s; }
+.water-drop:nth-child(12) { left: 44%; animation-delay: 3.3s; }
+.water-drop:nth-child(13) { left: 56%; animation-delay: 3.6s; }
+.water-drop:nth-child(14) { left: 43%; animation-delay: 3.9s; }
+.water-drop:nth-child(15) { left: 57%; animation-delay: 4.2s; }
+.water-drop:nth-child(16) { left: 42%; animation-delay: 4.5s; }
+.water-drop:nth-child(17) { left: 58%; animation-delay: 4.8s; }
+.water-drop:nth-child(18) { left: 41%; animation-delay: 5.1s; }
+.water-drop:nth-child(19) { left: 59%; animation-delay: 5.4s; }
+.water-drop:nth-child(20) { left: 40%; animation-delay: 5.7s; }
+
+/* Leaves */
+.leaves-container {
+  position: relative;
+  width: 100%;
+  margin-top: 120px;
+}
+
+.leaf {
+  position: absolute;
+  width: 180px;
+  height: 80px;
+  background: #2ecc71;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.leaf.left {
+  left: 15%;
+  transform: rotate(-10deg);
+}
+
+.leaf.right {
+  right: 15%;
+  transform: rotate(10deg);
+}
+
+.leaf:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.leaf-content {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 16px;
+  display: block;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Well */
+.well {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  background: #2c3e50;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.water-splash {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: #3498db;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: splash 1.5s infinite;
+}
+
+@keyframes splash {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
   }
-  
-  @media (max-width: 768px) {
-    .timeline-main-title {
-      font-size: 2.5rem;
-    }
-  
-    .timeline-container {
-      padding: 2rem 1rem;
-    }
-  
-    .timeline-event {
-      width: 180px;
-      margin: 0 10px;
-    }
-  
-    .timeline-content {
-      width: 160px;
-    }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
   }
-  
-  @media (max-width: 480px) {
-    .timeline-main-title {
-      font-size: 2rem;
-    }
-  
-    .timeline-title {
-      font-size: 0.9rem;
-    }
-  
-    .timeline-date {
-      font-size: 0.8rem;
-    }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
   }
+}

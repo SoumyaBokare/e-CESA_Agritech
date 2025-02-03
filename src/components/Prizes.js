@@ -1,27 +1,54 @@
-import { FaTrophy } from "react-icons/fa";
-import "./prizes.css";
+import React from 'react';
+import './prizes.css';
 
-const Prizes = () => {
-  const prizeData = [
-    { place: "First Runner Up", amount: "₹70,000" },
-    { place: "Winner", amount: "₹1,00,000" },
-    { place: "Second Runner Up", amount: "₹30,000" },
-  ];
-
+const PrizeSection = () => {
   return (
-    <section className="prizes-section">
-      <h2 className="prizes-title">PRIZES</h2>
-      <ul className="prizes-list">
-        {prizeData.map((prize, index) => (
-          <li key={index} className={`prize-item ${prize.place.replace(/\s+/g, '-').toLowerCase()}`}>
-            <FaTrophy className="prize-icon" />
-            <p className="prize-place">{prize.place}</p>
-            <p className="prize-amount">{prize.amount}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <div className="prize-section">
+      <div className="heading">
+        <h1>PRIZES</h1>
+      </div>
+      <div id="podium-box">
+        {/* Silver Trophy */}
+        <div className="step-container">
+          <div id="second-step" className="step silver">
+            <div className="trophy silver-trophy">🥈</div>
+            <div className="prize-details">
+              <h2>INR 70,000</h2>
+              <p className="prize-type">CASH PRIZE</p>
+              <p className="prize-extras">EXCITING GOODIES WORTH INR 1.5L & MORE!</p>
+              <div className="prize-label">• RUNNER UP •</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Gold Trophy */}
+        <div className="step-container">
+          <div id="first-step" className="step gold">
+            <div className="trophy gold-trophy">🥇</div>
+            <div className="prize-details">
+              <h2>INR 1,00,000</h2>
+              <p className="prize-type">CASH PRIZE</p>
+              <p className="prize-extras">EXCITING GOODIES WORTH INR 2L & MORE!</p>
+              <div className="prize-label">• WINNER •</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bronze Trophy */}
+        <div className="step-container">
+          <div id="third-step" className="step bronze">
+            <div className="trophy bronze-trophy">🥉</div>
+            <div className="prize-details">
+              <h2>INR 30,000</h2>
+              <p className="prize-type">CASH PRIZE</p>
+              <p className="prize-extras">EXCITING GOODIES WORTH INR 1L & MORE!</p>
+              <div className="prize-label">• 2ND RUNNER UP •</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default Prizes;
+export default PrizeSection;

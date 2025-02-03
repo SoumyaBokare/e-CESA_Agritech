@@ -1,0 +1,237 @@
+.water-timeline {
+  position: relative;
+  min-height: 200vh;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #1a237e, #3f51b5);
+}
+
+.clouds {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.cloud {
+  position: absolute;
+  background: #fff;
+  border-radius: 100px;
+}
+
+.cloud:before,
+.cloud:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cloud1 {
+  width: 120px;
+  height: 40px;
+  top: 50px;
+  left: 20%;
+}
+
+.cloud1:before {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: 10px;
+}
+
+.cloud1:after {
+  width: 80px;
+  height: 80px;
+  top: -40px;
+  right: 10px;
+}
+
+.cloud2 {
+  width: 100px;
+  height: 30px;
+  top: 80px;
+  right: 25%;
+}
+
+.cloud2:before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 5px;
+}
+
+.cloud2:after {
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  right: 5px;
+}
+
+.cloud3 {
+  width: 80px;
+  height: 25px;
+  top: 30px;
+  left: 40%;
+}
+
+.cloud3:before {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 5px;
+}
+
+.cloud3:after {
+  width: 55px;
+  height: 55px;
+  top: -30px;
+  right: 5px;
+}
+
+.water-container {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.3s ease-out;
+}
+
+.water-stream {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(3, 169, 244, 0.2), rgba(3, 169, 244, 0.8));
+  filter: blur(1px);
+}
+
+.water-drop {
+  position: absolute;
+  background-color: rgba(3, 169, 244, 0.8); /* Increased opacity for better clarity */
+  border-radius: 50%;
+  filter: blur(0.5px); /* Reduced blur for better clarity */
+  animation: dropFall linear infinite;
+}
+
+@keyframes dropFall {
+  0% {
+    top: -50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% + 50px);
+    opacity: 0;
+  }
+}
+
+.leaf-container {
+  position: absolute;
+  width: 220px;
+  height: 110px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.leaf-container.left {
+  right: 50%;
+  transform: translateX(-10px);
+}
+
+.leaf-container.right {
+  left: 50%;
+  transform: translateX(10px);
+}
+
+.leaf {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.leaf-container.left .leaf {
+  border-radius: 0 100% 100% 0;
+  transform: skew(0deg, -10deg);
+}
+
+.leaf-container.right .leaf {
+  border-radius: 100% 0 0 100%;
+  transform: skew(0deg, 10deg);
+}
+
+.leaf-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.leaf-container.left .leaf-content {
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+
+.leaf-container.right .leaf-content {
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+.leaf .date {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.leaf .description {
+  font-size: 12px;
+}
+
+.leaf-container.watered .leaf {
+  background-color: #21f336;
+  box-shadow: 0 0 15px rgba(33, 243, 103, 0.5);
+}
+
+.well {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  background-color: #ffc107;
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+}
+
+.well::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #ff9800;
+  transition: height 1s ease-in-out;
+}
+
+.well.filled::before {
+  height: 100%;
+}
