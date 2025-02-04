@@ -1,73 +1,172 @@
-
-
 .container {
   min-height: 400px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 10px;
   margin-bottom: 100px;
 }
 
+.container h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
 .cards-container {
-  position: absolute;
-  transform: translate(-50%, -50%);
+  position: relative;
   perspective: 800px;
   width: 100%;
   max-width: 700px;
   display: flex;
   justify-content: center;
-  margin-bottom: 400px;
+  align-items: center;
+  height: 60vh;
+  transform: translateX(-160px) !important;
 }
 
 .card {
   position: absolute;
-  width: 250px;
-  height: 450px;
+  height: 450px; /* Set equal height for all cards */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
-  color: white;
-  transition: transform 0.5s ease;
-  cursor: pointer;
+  padding: 20px;
+  background: #fff;
+  transition: transform 1s ease-out, opacity 0.5s ease-out;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform-origin: bottom center;
+  color: white;
+  transform: scale(0.75); /* Start smaller and scale up when active */
 }
 
-.amount {
-  font-size: 3.5rem;
-  font-weight: bold;
+.card.active {
+  transform: translate(calc(var(--index) * 350px - 50%), 0) scale(1);
+  opacity: 1;
 }
 
-.rank {
-  font-size: 2rem;
-}
-
-.position {
-  font-size: 4rem;
-  align-self: flex-end;
-}
-
-.first {
+.first, .second, .third {
   background: linear-gradient(135deg, #ff6b6b, #ff8787);
-  z-index: 4;
 }
 
 .second {
   background: linear-gradient(135deg, #a8e063, #56ab2f);
-  z-index: 3;
 }
 
 .third {
-  background: white;
-  color: #333;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-}
-
-.fourth {
   background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  z-index: 1;
 }
 
+.amount {
+  font-size: 3.5rem; /* Increased font size */
+  font-weight: bold;
+}
+
+.rank {
+  font-size: 3rem; /* Increased font size */
+}
+
+.position {
+  font-size: 2rem; /* Increased font size */
+  align-self: flex-end;
+}
+
+.first {
+  width: 400px;
+}
+
+.second {
+  width: 350px;
+  margin-right: 200px;
+}
+
+.third {
+  width: 300px;
+}
+
+/* Base styles remain unchanged */
+
+@media (max-width: 1024px) {
+  .cards-container {
+    max-width: 600px;
+    transform: translateX(-50px) !important; /* Adjust for medium screens */
+  }
+
+  .card {
+    width: 240px; /* Adjust width to better fit the container */
+    height: 350px; /* Adjust height to maintain proportion */
+  }
+
+  .card.active {
+    transform: translate(calc(var(--index) * 250px - 50px), 0) scale(1);
+  }
+
+  .amount, .rank, .position {
+    font-size: 2.3rem; /* Slightly larger font for better readability */
+  }
+
+  .position {
+    font-size: 1.8rem; /* Adjust size for consistency */
+  }
+
+  .second {
+    margin-right: 100px; /* Adjust margin to fit in the view */
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    max-width: 100%;
+    height: auto; /* Allow container to fit content */
+    transform: translateX(0px) !important; /* Center align the container */
+  }
+
+  .card {
+    width: 200px; /* Smaller cards for smaller screens */
+    height: 300px; /* Adjust height proportionally */
+  }
+
+  .card.active {
+    transform: translate(calc(var(--index) * 200px), 0) scale(1); /* Less space between cards */
+  }
+
+  .amount, .rank, .position {
+    font-size: 1.8rem; /* Smaller font sizes for smaller screens */
+  }
+
+  .position {
+    font-size: 1.5rem; /* Adjust to fit smaller cards */
+  }
+
+  .second {
+    margin-right: 50px; /* Less margin to prevent overflow */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center cards vertically */
+    transform: none !important;
+  }
+
+  .card {
+    position: static;
+    width: 90%; /* Full width cards for very small screens */
+    margin-bottom: 20px; /* Space between stacked cards */
+    transform: none !important;
+  }
+
+  .card.active {
+    transform: none; /* No special transform for active state */
+  }
+
+  .amount, .rank, .position {
+    font-size: 1.5rem; /* Further reduce font sizes for readability */
+  }
+
+  .position {
+    font-size: 1.2rem;
+  }
+}

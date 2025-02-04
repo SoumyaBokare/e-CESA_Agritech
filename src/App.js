@@ -4,7 +4,8 @@ import About from "./components/About";
 import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
-import Gallery from "./components/Gallery";
+// import Gallery from "./components/Gallery";
+import Domain from "./components/Domain";
 import Hero from "./components/Hero";
 import Timeline from "./components/Timeline";
 import PrizeCards from "./components/PrizeCards";
@@ -24,23 +25,19 @@ const App = () => {
       <Hero />
       <div className="landing">
         <main className="min-h-screen bg-gray-100">
-          <Gallery />
+          <Domain />
         </main>
-        
         <section id="about">
           <About />
         </section>
-
         <section id="timeline">
           <h1 style={{ textAlign: "center", padding: "20px" }}>Event Timeline</h1>
           <Timeline events={timelineEvents} />
         </section>
 
         <section id="prizes">
-          <h1 style={{ textAlign: "center", padding: "20px" }}>Prizes</h1>
           <PrizeCards />
         </section>
-
         <Rules />
         <Sponsors />
         <Footer />
