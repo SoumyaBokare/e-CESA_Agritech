@@ -1,89 +1,73 @@
-.prize-section {
-  text-align: center;
-  padding: 20px;
-}
 
-.heading {
-  margin-bottom: 40px;
-}
 
-#podium-box {
-  margin: 0 auto;
+.container {
+  min-height: 400px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  gap: 20px;
+  align-items: center;
+  padding-top: 10px;
+  margin-bottom: 100px;
 }
 
-.step-container {
+.cards-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  perspective: 800px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 400px;
+}
+
+.card {
+  position: absolute;
+  width: 250px;
+  height: 450px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  color: white;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.step {
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.step:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.gold {
-  background-color: #ffd700;
-}
-
-.silver {
-  background-color: #c0c0c0;
-}
-
-.bronze {
-  background-color: #cd7f32;
-}
-
-#first-step {
-  height: 200px; /* Tallest */
-}
-
-#second-step {
-  height: 150px; /* Less tall */
-}
-
-#third-step {
-  height: 100px; /* Shortest */
-}
-
-.trophy {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.prize-details {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.prize-type {
-  font-size: 1.2rem;
+.amount {
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
-.prize-extras {
-  font-size: 1rem;
-  color: #666;
+.rank {
+  font-size: 2rem;
 }
 
-.prize-label {
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: bold;
+.position {
+  font-size: 4rem;
+  align-self: flex-end;
 }
+
+.first {
+  background: linear-gradient(135deg, #ff6b6b, #ff8787);
+  z-index: 4;
+}
+
+.second {
+  background: linear-gradient(135deg, #a8e063, #56ab2f);
+  z-index: 3;
+}
+
+.third {
+  background: white;
+  color: #333;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.fourth {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  z-index: 1;
+}
+

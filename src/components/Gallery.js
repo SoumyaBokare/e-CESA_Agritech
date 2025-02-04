@@ -131,28 +131,26 @@ const Gallery = () => {
         <h2>DOMAINS</h2>
       </div>
       <div className="gallery-container">
-        {images.map((image, index) => (
-          <div key={index} className={`gallery-item ${image.className}`}>
-            <img src={image.src} alt={image.alt} />
-            <div className="overlay">
-              <div className="text">
-                {image.problemStatement}
-                <button className="more-info-button" onClick={() => handleMoreInfoClick(index)}>More Info</button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      {activeImage && (
-        <div className="info-frame">
-          <button className="close-button" onClick={handleCloseClick}>X</button>
-          <div className="info-content" dangerouslySetInnerHTML={{ __html: moreInfoContent }} />
-          <div className="leaf top-left"></div>
-          <div className="leaf top-right"></div>
-          <div className="leaf bottom-left"></div>
-          <div className="leaf bottom-right"></div>
+  {images.map((image, index) => (
+    <div key={index} className={`gallery-item ${image.className}`}>
+      <img src={image.src} alt={image.alt} />
+      <div className="overlay">
+        <div className="text">
+          {image.problemStatement}
+          <button className="more-info-button" onClick={() => handleMoreInfoClick(index)}>More Info</button>
         </div>
-      )}
+      </div>
+    </div>
+  ))}
+  
+  {activeImage && (
+    <div className="info-frame">
+      <button className="close-button" onClick={handleCloseClick}>X</button>
+      <div className="info-content" dangerouslySetInnerHTML={{ __html: moreInfoContent }} />
+    </div>
+  )}
+</div>
+
     </div>
   );
 };

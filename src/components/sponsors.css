@@ -1,37 +1,54 @@
-.sponsors {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-  }
-  
-  .carousel {
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    margin: 20px 0;
-  }
-  
-  .carousel-track {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll 20s linear infinite;
-  }
-  
-  .carousel-item {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    background-color: #4CAF50; /* Agriculture green */
-    color: white;
-    margin: 0 10px;
-    border-radius: 5px;
-  }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+.sponsor-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff; /* Or any preferred background color */
+  padding: 20px 0;
+}
+
+.sponsor-scroll {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-right-to-left 50s linear infinite;
+}
+
+.sponsor-scroll.left-to-right {
+  animation: scroll-left-to-right 50s linear infinite;
+}
+
+.sponsor-logo {
+  flex: 0 0 auto;
+  width: 200px; /* Adjust based on the actual logo size */
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px 60px 0px;
+
+}
+
+.sponsor-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes scroll-right-to-left {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+@keyframes scroll-left-to-right {
+  0% { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}

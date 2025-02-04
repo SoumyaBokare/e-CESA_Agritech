@@ -1,95 +1,105 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./timeline.css";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const timelineEvents = [
-  { date: "Jan 1", description: "Hackathon Kickoff" },
-  { date: "Feb 10", description: "Team Registration Closes" },
-  { date: "Mar 25", description: "Prototype Submission Deadline" },
-  { date: "Apr 15", description: "Final Pitch Presentation" },
-  { date: "May 30", description: "Winners Announcement" },
-];
+import React, { useEffect, useRef, useState } from 'react';
+import './timeline.css';
 
 const Timeline = () => {
-  const waterContainerRef = useRef(null);
-  const leavesRef = useRef([]);
-  const textRefs = useRef([]);
+  const timelineRefs = useRef([]);
+  const lineRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [visibleItems, setVisibleItems] = useState({});
 
   useEffect(() => {
-    // Create multiple drops dynamically
-    for (let i = 0; i < 10; i++) {
-      const drop = document.createElement("div");
-      drop.className = "water-drop";
-      drop.style.left = `${40 + Math.random() * 20}%`;
-      drop.style.animationDelay = `${Math.random() * 2}s`;
-      waterContainerRef.current.appendChild(drop);
-    }
+    const handleScroll = () => {
+      if (lineRef.current) {
+        const timelineTop = lineRef.current.getBoundingClientRect().top;
+        const timelineHeight = lineRef.current.offsetHeight;
+        const windowHeight = window.innerHeight;
 
-    // Animating each leaf and text
-    leavesRef.current.forEach((leaf, index) => {
-      gsap.fromTo(
-        leaf,
-        { opacity: 0, scale: 0.5 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: leaf,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: 1,
-          },
-        }
-      );
+        let progress = (windowHeight - timelineTop) / (timelineHeight + windowHeight);
+        progress = Math.min(Math.max(progress, 0), 1);
+        setScrollProgress(progress);
+      }
+    };
 
-      gsap.fromTo(
-        textRefs.current[index],
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: leaf,
-            start: "top 80%",
-            end: "top 50%",
-            scrub: 1,
-          },
-        }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute('data-id');
+          setVisibleItems((prev) => ({
+            ...prev,
+            [id]: entry.isIntersecting && entry.boundingClientRect.top <= window.innerHeight,
+          }));
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '-20% 0px -20% 0px',
+      }
+    );
+
+    timelineRefs.current.forEach((ref, index) => {
+      if (ref) {
+        ref.setAttribute('data-id', index);
+        observer.observe(ref);
+      }
     });
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
+
+  const events = [
+    {
+      date: '29th Jan 2025',
+      title: 'Phase 1: Registrations & Idea Submission',
+      description: 'Registrations go live and idea submission begins. Get ready to showcase your innovative ideas!',
+    },
+    {
+      date: '1st March 2025',
+      title: 'Last Date for Idea Submission',
+      description: "Final day to submit your groundbreaking ideas. Don't miss this deadline!",
+    },
+    {
+      date: 'No Idea',
+      title: 'Announcement of Phase 1 Results',
+      description: 'The moment of truth! Find out if your idea has been selected for the next phase.',
+    },
+    {
+      date: '27th - 28th March 2025',
+      title: 'Phase 2: Hackathon',
+      description: 'Get ready for the main event! Details of Phase 2 will be revealed soon. Stay tuned!',
+    },
+  ];
 
   return (
     <div className="timeline-container">
-      {/* Tap at the top */}
-      <div className="tap" ref={waterContainerRef}></div>
+      <div className="timeline-header">
+        <h2>HACKATHON TIMELINE</h2>
+        <p>Join us on this exciting journey of innovation and creativity. Mark these dates on your calendar and prepare to showcase your skills!</p>
+      </div>
 
-      {/* Timeline Events */}
-      <div className="timeline">
-        {timelineEvents.map((event, index) => (
+      <div className="timeline-wrapper">
+        <div className="timeline-line" ref={lineRef} style={{ '--progress': `${scrollProgress * 100}%` }}></div>
+
+        {events.map((event, index) => (
           <div
             key={index}
-            className={`leaf leaf-${index}`}
-            ref={(el) => (leavesRef.current[index] = el)}
+            ref={(el) => (timelineRefs.current[index] = el)}
+            className={`timeline-item ${visibleItems[index] ? 'visible' : ''}`}
           >
-            <div className="date">{event.date}</div>
-            <div
-              className="description"
-              ref={(el) => (textRefs.current[index] = el)}
-            >
-              {event.description}
+            <div className="timeline-dot"></div>
+            <div className="timeline-content">
+              <div className="timeline-date">{event.date}</div>
+              <h3 className="timeline-title">{event.title}</h3>
+              <p className="timeline-description">{event.description}</p>
             </div>
           </div>
         ))}
       </div>
-
-      {/* Well at the bottom */}
-      <div className="well">🏺</div>
     </div>
   );
 };

@@ -1,12 +1,13 @@
+// App.js
 import React from "react";
 import About from "./components/About";
-import Prizes from "./components/Prizes";
 import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
-import WaterTimeline from "./components/Watertimeline";
+import Timeline from "./components/Timeline";
+import PrizeCards from "./components/PrizeCards";
 import "./App.css";
 
 const App = () => {
@@ -30,15 +31,16 @@ const App = () => {
           <About />
         </section>
 
-        <section id="timeline" className="mt-18">
-          <h1 style={{ textAlign: "center", padding: "20px" }}>Water Flow Timeline</h1>
-          <p style={{ textAlign: "center", padding: "0 20px 40px" }}>
-            Scroll down to see the water flow through our journey!
-          </p>
-          <WaterTimeline events={timelineEvents} />
+        <section id="timeline">
+          <h1 style={{ textAlign: "center", padding: "20px" }}>Event Timeline</h1>
+          <Timeline events={timelineEvents} />
         </section>
 
-        <Prizes />
+        <section id="prizes">
+          <h1 style={{ textAlign: "center", padding: "20px" }}>Prizes</h1>
+          <PrizeCards />
+        </section>
+
         <Rules />
         <Sponsors />
         <Footer />
