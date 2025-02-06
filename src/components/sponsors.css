@@ -5,14 +5,20 @@
   padding: 20px 0;
 }
 
+.sponsor-heading{
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .sponsor-scroll {
   display: flex;
   white-space: nowrap;
-  animation: scroll-right-to-left 50s linear infinite;
+  animation: scroll-right-to-left 40s linear infinite;
 }
 
 .sponsor-scroll.left-to-right {
-  animation: scroll-left-to-right 50s linear infinite;
+  animation: scroll-left-to-right 40s linear infinite;
 }
 
 .sponsor-logo {

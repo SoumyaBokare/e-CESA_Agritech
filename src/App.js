@@ -1,12 +1,10 @@
-// App.js
 import React from "react";
-import About from "./components/About";
 import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
-// import Gallery from "./components/Gallery";
+import HackathonDetails from "./components/hackathondetail";
 import Domain from "./components/Domain";
-import Hero from "./components/Hero";
+import Landing from "./components/Landing";
 import Timeline from "./components/Timeline";
 import PrizeCards from "./components/PrizeCards";
 import "./App.css";
@@ -22,16 +20,13 @@ const App = () => {
 
   return (
     <>
-      <Hero />
+      <Landing />
+      <HackathonDetails />
       <div className="landing">
         <main className="min-h-screen bg-gray-100">
           <Domain />
         </main>
-        <section id="about">
-          <About />
-        </section>
         <section id="timeline">
-          <h1 style={{ textAlign: "center", padding: "20px" }}>Event Timeline</h1>
           <Timeline events={timelineEvents} />
         </section>
 

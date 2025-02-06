@@ -10,7 +10,7 @@
 
 .container h2 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .cards-container {
@@ -22,12 +22,12 @@
   justify-content: center;
   align-items: center;
   height: 60vh;
-  transform: translateX(-160px) !important;
+  transform: translateX(-160px);
 }
 
 .card {
   position: absolute;
-  height: 450px; /* Set equal height for all cards */
+  height: 450px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,8 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transform-origin: bottom center;
   color: white;
-  transform: scale(0.75); /* Start smaller and scale up when active */
+  transform: scale(0.75);
+  opacity: 0.5;
 }
 
 .card.active {
@@ -46,7 +47,9 @@
   opacity: 1;
 }
 
-.first, .second, .third {
+.first,
+.second,
+.third {
   background: linear-gradient(135deg, #ff6b6b, #ff8787);
 }
 
@@ -59,16 +62,16 @@
 }
 
 .amount {
-  font-size: 3.5rem; /* Increased font size */
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
 .rank {
-  font-size: 3rem; /* Increased font size */
+  font-size: 3rem;
 }
 
 .position {
-  font-size: 2rem; /* Increased font size */
+  font-size: 2rem;
   align-self: flex-end;
 }
 
@@ -85,85 +88,89 @@
   width: 300px;
 }
 
-/* Base styles remain unchanged */
-
 @media (max-width: 1024px) {
   .cards-container {
     max-width: 600px;
-    transform: translateX(-50px) !important; /* Adjust for medium screens */
+    transform: translateX(-50px);
   }
 
   .card {
-    width: 240px; /* Adjust width to better fit the container */
-    height: 350px; /* Adjust height to maintain proportion */
+    width: 240px;
+    height: 350px;
   }
 
   .card.active {
     transform: translate(calc(var(--index) * 250px - 50px), 0) scale(1);
   }
 
-  .amount, .rank, .position {
-    font-size: 2.3rem; /* Slightly larger font for better readability */
+  .amount,
+  .rank,
+  .position {
+    font-size: 2.3rem;
   }
 
   .position {
-    font-size: 1.8rem; /* Adjust size for consistency */
+    font-size: 1.8rem;
   }
 
   .second {
-    margin-right: 100px; /* Adjust margin to fit in the view */
+    margin-right: 100px;
   }
 }
 
 @media (max-width: 768px) {
   .cards-container {
     max-width: 100%;
-    height: auto; /* Allow container to fit content */
-    transform: translateX(0px) !important; /* Center align the container */
+    height: auto;
+    transform: translateX(0px);
   }
 
   .card {
-    width: 200px; /* Smaller cards for smaller screens */
-    height: 300px; /* Adjust height proportionally */
+    width: 200px;
+    height: 300px;
   }
 
   .card.active {
-    transform: translate(calc(var(--index) * 200px), 0) scale(1); /* Less space between cards */
+    transform: translate(calc(var(--index) * 200px), 0) scale(1);
   }
 
-  .amount, .rank, .position {
-    font-size: 1.8rem; /* Smaller font sizes for smaller screens */
+  .amount,
+  .rank,
+  .position {
+    font-size: 1.8rem;
   }
 
   .position {
-    font-size: 1.5rem; /* Adjust to fit smaller cards */
+    font-size: 1.5rem;
   }
 
   .second {
-    margin-right: 50px; /* Less margin to prevent overflow */
+    margin-right: 50px;
   }
 }
 
 @media (max-width: 480px) {
   .cards-container {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center cards vertically */
-    transform: none !important;
+    flex-direction: column;
+    align-items: center;
+    transform: none;
   }
 
   .card {
     position: static;
-    width: 90%; /* Full width cards for very small screens */
-    margin-bottom: 20px; /* Space between stacked cards */
-    transform: none !important;
+    width: 90%;
+    margin-bottom: 20px;
+    transform: none;
   }
 
   .card.active {
-    transform: none; /* No special transform for active state */
+    transform: none;
   }
 
-  .amount, .rank, .position {
-    font-size: 1.5rem; /* Further reduce font sizes for readability */
+  .amount,
+  .rank,
+  .position {
+    font-size: 1.5rem;
   }
 
   .position {

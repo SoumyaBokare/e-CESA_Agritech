@@ -1,74 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jersey+15&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
-html, body {
-  font-family: 'Kanit', sans-serif !important;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-.App {
-  text-align: center;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
-}
-
-.header {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #4CAF50;
-  color: white;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 2em;
-}
-
-.header h2 {
-  margin: 10px 0 20px;
-  font-size: 2em;
-}
-
-.register-button {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  color: #4CAF50;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.registration-closes {
-  margin-top: 20px;
-}
-
-.countdown-timer {
-  font-size: 1.5em;
-}
-
-.about, .theme, .timeline, .prizes, .rules, .sponsors {
-  padding: 20px;
-  text-align: center;
-}
-
-.about h2, .theme h2, .timeline h2, .prizes h2, .rules h2, .sponsors h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-/* Scoped styles for the landing page */
-.landing-section {
+.landing-container {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -79,7 +9,7 @@ li {
   overflow: hidden;
 }
 
-.landing-section::before {
+.landing-container::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -89,15 +19,12 @@ li {
   z-index: 15;
 }
 
-.landing-section img {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.landing-section .hidden {
+.hidden {
   opacity: 0;
 }
 
-.landing-section img {
+.landing-images {
+  transition: opacity 0.5s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
@@ -108,33 +35,16 @@ li {
   overflow: hidden;
 }
 
-.landing-section img#moon {
+.landing-container img#moon {
   mix-blend-mode: screen;
   margin-top: 10rem;
 }
 
-.landing-section img#trees {
+.landing-container img#trees {
   z-index: 10;
 }
 
-.landing-sec {
-  position: relative;
-  padding: 100px;
-  background: #1c0522;
-}
-
-.landing-sec h2 {
-  font-size: 3.5em;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.landing-sec p {
-  font-size: 1.2em;
-  color: #fff;
-}
-
-#comet {
+.landing-container img#comet {
   position: absolute;
   top: 10%;
   left: 40%;
@@ -145,12 +55,11 @@ li {
   display: none;
 }
 
-/* Theme switch styling */
 .theme-switch {
   --toggle-size: 30px;
   --container-width: 5.625em;
   --container-height: 2.5em;
-  --container-radius: 6.25em;
+  --container-radius: 0;
   --container-light-bg: #3d7eae;
   --container-night-bg: #1d1f2c;
   --circle-container-diameter: 3.375em;
@@ -166,16 +75,20 @@ li {
   --back-clouds-color: #aacadf;
   --transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
   --circle-transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
+
 }
 
-.theme-switch {
+.theme-switch{
   position: absolute;
   top: 20px;
   right: 20px;
 }
 
 .theme-switch,
-.theme-switch * {
+.theme-switch *,
+.theme-switch *::before,
+.theme-switch *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -190,8 +103,11 @@ li {
   border-radius: var(--container-radius);
   overflow: hidden;
   cursor: pointer;
+  -webkit-box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
+    0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
   box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
     0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   position: relative;
 }
@@ -201,6 +117,8 @@ li {
   position: absolute;
   z-index: 1;
   inset: 0;
+  -webkit-box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset,
+    0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
   box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset,
     0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
   border-radius: var(--container-radius);
@@ -219,11 +137,18 @@ li {
   left: var(--circle-container-offset);
   top: var(--circle-container-offset);
   border-radius: var(--container-radius);
+  -webkit-box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
+    inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
+    0 0 0 0.625em rgba(255, 255, 255, 0.1),
+    0 0 0 1.25em rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
     inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
     0 0 0 0.625em rgba(255, 255, 255, 0.1),
     0 0 0 1.25em rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-transition: var(--circle-transition);
   transition: var(--circle-transition);
   pointer-events: none;
 }
@@ -238,22 +163,34 @@ li {
   margin: auto;
   border-radius: var(--container-radius);
   background-color: var(--sun-bg);
+  -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61)
+      inset,
+    0em -0.062em 0.062em 0em #a1872a inset;
   box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
     0em -0.062em 0.062em 0em #a1872a inset;
+  -webkit-filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25))
+    drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
   filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25))
     drop-shadow(0em 0.062em 0.125em rgba(0, 0, 0, 0.25));
   overflow: hidden;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 .theme-switch__moon {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
   transform: translateX(100%);
   width: 100%;
   height: 100%;
   background-color: var(--moon-bg);
   border-radius: inherit;
+  -webkit-box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61)
+      inset,
+    0em -0.062em 0.062em 0em #969696 inset;
   box-shadow: 0.062em 0.062em 0.062em 0em rgba(254, 255, 239, 0.61) inset,
     0em -0.062em 0.062em 0em #969696 inset;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
   position: relative;
 }
@@ -267,6 +204,7 @@ li {
   height: 0.75em;
   border-radius: var(--container-radius);
   background-color: var(--spot-color);
+  -webkit-box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
   box-shadow: 0em 0.0312em 0.062em rgba(0, 0, 0, 0.25) inset;
 }
 
@@ -295,6 +233,17 @@ li {
   position: absolute;
   bottom: -0.625em;
   left: 0.312em;
+  -webkit-box-shadow: 0.937em 0.312em var(--clouds-color),
+    -0.312em -0.312em var(--back-clouds-color),
+    1.437em 0.375em var(--clouds-color), 0.5em -0.125em var(--back-clouds-color),
+    2.187em 0 var(--clouds-color), 1.25em -0.062em var(--back-clouds-color),
+    2.937em 0.312em var(--clouds-color), 2em -0.312em var(--back-clouds-color),
+    3.625em -0.062em var(--clouds-color), 2.625em 0em var(--back-clouds-color),
+    4.5em -0.312em var(--clouds-color),
+    3.375em -0.437em var(--back-clouds-color),
+    4.625em -1.75em 0 0.437em var(--clouds-color),
+    4em -0.625em var(--back-clouds-color),
+    4.125em -2.125em 0 0.437em var(--back-clouds-color);
   box-shadow: 0.937em 0.312em var(--clouds-color),
     -0.312em -0.312em var(--back-clouds-color),
     1.437em 0.375em var(--clouds-color), 0.5em -0.125em var(--back-clouds-color),
@@ -306,6 +255,7 @@ li {
     4.625em -1.75em 0 0.437em var(--clouds-color),
     4em -0.625em var(--back-clouds-color),
     4.125em -2.125em 0 0.437em var(--back-clouds-color);
+  -webkit-transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
   transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
 }
 
@@ -315,8 +265,9 @@ li {
   color: var(--stars-color);
   top: -100%;
   left: 0.312em;
-  width: 2.75em;
+  width: 2.5em;
   height: auto;
+  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -348,6 +299,8 @@ li {
 }
 
 .theme-switch__checkbox:checked + .theme-switch__container .theme-switch__moon {
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
   transform: translate(0);
   z-index: 1;
 }
@@ -364,5 +317,7 @@ li {
   .theme-switch__stars-container {
   z-index: 1;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }

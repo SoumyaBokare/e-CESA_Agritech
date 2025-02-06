@@ -64,15 +64,20 @@ const Timeline = () => {
       description: "Final day to submit your groundbreaking ideas. Don't miss this deadline!",
     },
     {
-      date: 'No Idea',
+      date: '10th March 2025',
       title: 'Announcement of Phase 1 Results',
       description: 'The moment of truth! Find out if your idea has been selected for the next phase.',
     },
     {
       date: '27th - 28th March 2025',
       title: 'Phase 2: Hackathon',
-      description: 'Get ready for the main event! Details of Phase 2 will be revealed soon. Stay tuned!',
+      description: 'Get ready for the main event and let the hackathon begin! Show your skills and win exciting prizes!',
     },
+    {
+      date: '28th March 2025',
+      title: 'Hackathon Ends',
+      description: 'Time\'s up! and the winner is...',
+    }
   ];
 
   return (
