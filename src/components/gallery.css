@@ -70,16 +70,6 @@
   transform-origin: center;
 }
 
-/* Hover Effect */
-.gallery-item:hover {
-  z-index: 10;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05);
-  object-fit: cover;
-}
-
 /* Overlay */
 .overlay {
   position: absolute;
@@ -120,7 +110,7 @@
   transform: scale(1.1);
 }
 
-.gallery-item:hover .more-info-button {
+.more-info-button {
   display: block;
   margin: 10px auto 0;
 }
@@ -135,6 +125,8 @@
   grid-column: 3 / 5;
   grid-row: 1 / 2;
 }
+
+
 
 .robot {
   grid-column: 3 / 5;
