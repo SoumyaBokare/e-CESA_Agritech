@@ -1,8 +1,24 @@
-import React from 'react';
-import {  FaInstagram, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
-import './Footer.css'; // Import the CSS file
+import React, { useState, useEffect } from 'react';
+import { FaInstagram, FaLinkedin, FaEnvelope, FaPhone, FaArrowUp } from 'react-icons/fa';
+import './Footer.css';
 
 const Footer = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  // Show button when user scrolls down
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 200);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -36,10 +52,10 @@ const Footer = () => {
         <div className="footer-section right">
           <h2 className="footer-title">Follow Us</h2>
           <div className="social-links">
-            <a href="https://www.instagram.com/ecesa_kjsce/" aria-label="Instagram">
+            <a href="https://www.instagram.com/ecesa_kjsce/" aria-label="Instagram" target='_blank'>
               <FaInstagram />
             </a>
-            <a href="https://in.linkedin.com/company/e-cesakjsce" aria-label="LinkedIn">
+            <a href="https://in.linkedin.com/company/e-cesakjsce" aria-label="LinkedIn" target='_blank'>
               <FaLinkedin />
             </a>
           </div>
@@ -51,10 +67,13 @@ const Footer = () => {
         <div className="footer-bottom-text">
           © 2024-25 ECESA KJSCE. All rights reserved
         </div>
-        <div className="made-with-love">
-          Made with <span className="heart">❤️</span> by Tech Majdoor (ECESA Council)
-        </div>
       </div>
+
+      {showScroll && (
+        <button className="scroll-to-top" onClick={scrollToTop} aria-label="Scroll to Top">
+          <FaArrowUp />
+        </button>
+      )}
     </footer>
   );
 };

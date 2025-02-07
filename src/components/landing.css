@@ -35,7 +35,14 @@
 
 .landing-container img#moon {
   mix-blend-mode: screen;
-  margin-top: 10rem; /* Removed; instead use a dynamic calculation if needed */
+}
+
+.landing-container img#farm {
+  transform: translateX(2rem);
+}
+
+.landing-container img#comet {
+  transform: translateX(-6rem);
 }
 
 .landing-container img#trees {
@@ -56,13 +63,13 @@
 
 .theme-switch {
   --toggle-size: 30px;
-  --container-width: 5.625em;
-  --container-height: 2.5em;
-  --container-radius: 0;
+  --container-width: 5.5rem;
+  --container-height: 2.75rem;
+  --container-radius: 6.25rem;
   --container-light-bg: #3d7eae;
   --container-night-bg: #1d1f2c;
-  --circle-container-diameter: 3.375em;
-  --sun-moon-diameter: 2.125em;
+  --circle-container-diameter: 1.375em;
+  --sun-moon-diameter: 1.325em;
   --sun-bg: #ecca2f;
   --moon-bg: #c4c9d1;
   --spot-color: #959db1;
@@ -77,11 +84,11 @@
 }
 
 .theme-switch {
-  position: fixed; /* Changed from absolute to fixed */
+  position: fixed; 
   top: 20px;
   right: 20px;
-  z-index: 5; /* Ensure this is above all other content */
-  display: flex; /* Ensure the label is aligned with the checkbox */
+  z-index: 5; 
+  display: flex; 
   align-items: center;
 }
 

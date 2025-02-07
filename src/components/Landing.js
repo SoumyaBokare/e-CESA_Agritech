@@ -21,6 +21,7 @@ const Landing = () => {
       let value = window.scrollY;
       if (moonRef.current) moonRef.current.style.top = value * 1.5 + "px";
       if (farmRef.current) farmRef.current.style.top = value * 0.7 + "px";
+      if (treesRef.current) treesRef.current.style.top = value * 0.5 + "px";
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -37,11 +38,14 @@ const Landing = () => {
     if (isDarkMode) {
       setTimeout(() => {
         if (starsRef.current) starsRef.current.src = require("../assets/images/night.png");
-        if (moonRef.current) moonRef.current.src = require("../assets/images/moon.png");
+        if (moonRef.current) {
+          moonRef.current.src = require("../assets/images/moon.png");
+        }
         if (farmRef.current) farmRef.current.src = require("../assets/images/dark_farm.png");
         if (treesRef.current) treesRef.current.src = require("../assets/images/dark_trees.png");
         if (cloudsRef.current) cloudsRef.current.src = require("../assets/images/dark_clouds.png");
         if (cometRef.current) cometRef.current.style.display = "block";
+        
       }, duration);
     } else {
       setTimeout(() => {
@@ -98,6 +102,7 @@ const Landing = () => {
       <img src={LightTrees} className="landing-images" id="trees" ref={treesRef} alt="Trees" />
       <img src={LightClouds} className="landing-images" id="clouds" ref={cloudsRef} alt="Clouds" />
       <img src={Comet} className="landing-images" id="comet" ref={cometRef} alt="Comet" style={{ display: "none" }} />
+      <div>AGRITECH 2025</div>
     </section>
   );
 };
