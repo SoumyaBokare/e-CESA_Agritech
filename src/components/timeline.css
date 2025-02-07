@@ -88,9 +88,9 @@
 }
 
 .timeline-content {
-  width: 80%;
+  width: 90%; /* Increased width */
   background: white;
-  padding: 20px;
+  padding: 30px; /* Increased padding */
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   position: relative;
@@ -106,14 +106,14 @@
 
 .timeline-title {
   color: #1f2937;
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased font size */
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .timeline-description {
   color: #666;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Increased font size */
   line-height: 1.5;
 }
 

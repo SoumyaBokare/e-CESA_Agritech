@@ -14,11 +14,11 @@
 .sponsor-scroll {
   display: flex;
   white-space: nowrap;
-  animation: scroll-right-to-left 40s linear infinite;
+  animation: scroll-right-to-left 20s linear infinite;
 }
 
 .sponsor-scroll.left-to-right {
-  animation: scroll-left-to-right 40s linear infinite;
+  animation: scroll-left-to-right 20s linear infinite;
 }
 
 .sponsor-logo {

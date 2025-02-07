@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f0f5;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Increased height */
+    background: rgba(255, 255, 255, 0.5); /* More transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is on top */
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+    backdrop-filter: blur(10px); /* Other browsers */
+    transition: top 0.3s ease;
+  }
+  
+  .navbar-hidden {
+    top: -80px; /* Move the navbar out of view */
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .nav-pills {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(28, 5, 34, 0.4);
+    margin: 8px;
+    padding: 8px; /* Increased padding */
+    border-radius: 9999px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    max-width: calc(100vw - 40px);
+  }
+  
+  .nav-link {
+    padding: 10px 20px; /* Increased padding */
+    font-size: 16px; /* Increased font size */
+    border-radius: 9999px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-pills {
+      overflow-x: auto;
+      padding: 4px;
+      max-width: calc(100vw - 40px);
+    }
+  
+    .nav-link {
+      padding: 6px 12px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  }

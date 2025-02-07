@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./components/Navbar";
 import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <>
       <Landing />
+      <Navbar />
       <HackathonDetails />
       <div className="landing">
         <main className="min-h-screen bg-gray-100">

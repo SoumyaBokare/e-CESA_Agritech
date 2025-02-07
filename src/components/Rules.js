@@ -53,7 +53,11 @@ const Rules = () => {
 
   return (
     <div className="rules-container">
-      <h1 className="faq-title">FAQ</h1>
+      <h1 className="faq-title">
+        <span className="letter">F</span>
+        <span className="letter">A</span>
+        <span className="letter">Q</span>
+      </h1>
       <div className="faq-grid">
         {Object.entries(rulesData).map(([category, questions], sectionIndex) => (
           <div key={category} className="faq-section">
