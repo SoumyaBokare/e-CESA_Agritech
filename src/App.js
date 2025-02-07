@@ -9,6 +9,7 @@ import Landing from "./components/Landing";
 import Timeline from "./components/Timeline";
 import PrizeCards from "./components/PrizeCards";
 import "./App.css";
+import Chicken from "./components/Chicken";
 
 const App = () => {
   const timelineEvents = [
@@ -23,22 +24,32 @@ const App = () => {
     <>
       <Landing />
       <Navbar />
-      <HackathonDetails />
+      <section id="domain">
+        <HackathonDetails />
+      </section>
       <div className="landing">
         <main className="min-h-screen bg-gray-100">
-          <Domain />
+          <section id="domain">
+            <Domain />
+          </section>
         </main>
         <section id="timeline">
           <Timeline events={timelineEvents} />
         </section>
-
         <section id="prizes">
           <PrizeCards />
         </section>
-        <Rules />
-        <Sponsors />
-        <Footer />
+        <section id="rules">
+          <Rules />
+        </section>
+        <section id="sponsors">
+          <Sponsors />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
       </div>
+      <Chicken />
     </>
   );
 };

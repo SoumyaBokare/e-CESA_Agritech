@@ -144,32 +144,3 @@ li {
   animation: comet 5s linear infinite;
   display: none;
 }
-
-/* Theme switch styling */
-.theme-switch {
-  --toggle-size: 30px;
-  --container-width: 5.625em;
-  --container-height: 2.5em;
-  --container-radius: 6.25em;
-  --container-light-bg: #3d7eae;
-  --container-night-bg: #1d1f2c;
-  --circle-container-diameter: 3.375em;
-  --sun-moon-diameter: 2.125em;
-  --sun-bg: #ecca2f;
-  --moon-bg: #c4c9d1;
-  --spot-color: #959db1;
-  --circle-container-offset: calc(
-    (var(--circle-container-diameter) - var(--container-height)) / 2 * -1
-  );
-  --stars-color: #fff;
-  --clouds-color: #f3fdff;
-  --back-clouds-color: #aacadf;
-  --transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-  --circle-transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
-}
-
-
-
-
-
-
