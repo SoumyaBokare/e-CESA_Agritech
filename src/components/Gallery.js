@@ -10,7 +10,7 @@ const Gallery = () => {
       src: require("../assets/images/farm.jpg"),
       alt: "farm close up",
       className: "farm",
-      problemStatement: "Precision Agriculture",
+      problemStatement: "PRECISION AGRICULTURE",
       moreInfo: `
         <h3>AI/IoT-Enabled Pest Detection and Management:</h3>
         <p>Description: Develop a system utilizing AI and IoT sensors to monitor crop fields
@@ -34,7 +34,7 @@ const Gallery = () => {
       src: require("../assets/images/supply.png"),
       alt: "Soil close up",
       className: "soil",
-      problemStatement: "Supply Chain and Market Access",
+      problemStatement: "SUPPLY CHAIN AND MARKET ACCESS",
       moreInfo: `
         <h3>Blockchain-Based Produce Traceability System:</h3>
         <p>Description: Develop a blockchain solution to track agricultural products from
@@ -58,7 +58,7 @@ const Gallery = () => {
       src: require("../assets/images/robot.jpg"),
       alt: "Robot",
       className: "robot",
-      problemStatement: "Biofuel",
+      problemStatement: "BIOFUEL",
       moreInfo: `
         <h3>AI-Optimized Biomass Collection System:</h3>
         <p>Description: Design an AI-driven logistics platform to streamline the collection of
@@ -81,7 +81,7 @@ const Gallery = () => {
       src: require("../assets/images/farmer.jpg"),
       alt: "Green USB device",
       className: "usb",
-      problemStatement: "Farmers' Empowerment and Education",
+      problemStatement: "FARMERS' EMPOWERMENT AND EDUCATION",
       moreInfo: `
         <h3>Mobile-Based Farmer Training Platform:</h3>
         <p>Description: Develop a mobile application offering interactive training modules on
@@ -106,7 +106,7 @@ const Gallery = () => {
       src: require("../assets/images/soil.jpg"),
       alt: "Drone in sky",
       className: "drone",
-      problemStatement: "Open Innovation",
+      problemStatement: "OPEN INNOVATION",
       moreInfo: `
         <h3>Open Innovation:</h3>
         <p>Participants are welcome to propose disruptive ideas in any agri-tech-related domain.</p>

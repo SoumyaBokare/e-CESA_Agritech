@@ -5,7 +5,6 @@ import './Footer.css';
 const Footer = () => {
   const [showScroll, setShowScroll] = useState(false);
 
-  // Show button when user scrolls down
   useEffect(() => {
     const handleScroll = () => {
       setShowScroll(window.scrollY > 200);
@@ -14,7 +13,6 @@ const Footer = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

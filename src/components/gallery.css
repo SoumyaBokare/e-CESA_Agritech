@@ -1,4 +1,12 @@
-/* Gallery Grid */
+
+.domains-title h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  margin: 10px 0;
+}
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

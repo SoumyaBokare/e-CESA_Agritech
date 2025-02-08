@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .footer-container {
   background-color: #11711e;
   color: white;
   padding: 40px 20px;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Poppins', sans-serif;
   position: relative;
 }
 
@@ -34,14 +35,12 @@
   align-items: center;
 }
 
-/* Title Styles */
 .footer-title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-/* Links */
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -59,7 +58,6 @@
   text-decoration: underline;
 }
 
-/* Contact Info */
 .contact-info {
   display: flex;
   flex-direction: column;
@@ -91,26 +89,24 @@
   color: white;
   text-decoration: none;
   font-size: 30px;
-  transition: color 0.3s ease; /* Smooth transition effect */
+  transition: color 0.3s ease; 
 }
 .instagram-icon {
-  transition: color 0.3s ease; /* Smooth transition effect */
+  transition: color 0.3s ease; 
 }
 
-/* Instagram Hover Effect */
 .instagram-icon:hover {
   color: #e1306c;
 }
 
 .instagram-icon {
-  transition: color 0.3s ease; /* Smooth transition effect */
+  transition: color 0.3s ease; 
 }
 
 .linkedin-icon:hover {
   color: #0077b5;
 }
 
-/* Footer Bottom */
 .footer-bottom {
   margin-top: 40px;
   padding-top: 20px;
@@ -124,7 +120,6 @@
   font-size: 14px;
 }
 
-/* Made With Love */
 .made-with-love {
   display: flex;
   align-items: center;
@@ -135,13 +130,12 @@
   color: red;
 }
 
-/* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #11711e;
   color: white;
   border: none;
@@ -162,8 +156,8 @@
 
 /* Icon size adjustment, if necessary */
 .scroll-to-top svg {
-  width: 50px; /* Increased icon size */
-  height: 50px; /* Increased icon size */
+  width: 30px; /* Increased icon size */
+  height: 30px; /* Increased icon size */
   color: white; /* Ensuring it remains white */
 }
 

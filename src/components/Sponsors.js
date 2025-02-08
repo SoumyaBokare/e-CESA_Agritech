@@ -16,7 +16,7 @@ const SponsorScroll = () => {
   return (
     <>
       <div className="sponsor-heading">
-        <h2>Our Sponsors</h2>
+        <h2>OUR SPONSORS</h2>
       </div>
       <div className="sponsor-scroll left-to-right">
         {sponsors.concat(sponsors).map((sponsor, index) => (

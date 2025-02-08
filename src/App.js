@@ -4,7 +4,6 @@ import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
 import About from './components/About'
-import Domain from "./components/Domain";
 import Landing from "./components/Landing";
 import Timeline from "./components/Timeline";
 import PrizeCards from "./components/PrizeCards";
