@@ -52,12 +52,12 @@ const Footer = () => {
         <div className="footer-section right">
           <h2 className="footer-title">Follow Us</h2>
           <div className="social-links">
-            <a href="https://www.instagram.com/ecesa_kjsce/" aria-label="Instagram" target='_blank'>
-              <FaInstagram />
-            </a>
-            <a href="https://in.linkedin.com/company/e-cesakjsce" aria-label="LinkedIn" target='_blank'>
-              <FaLinkedin />
-            </a>
+          <a href="https://www.instagram.com/ecesa_kjsce/" aria-label="Instagram" target='_blank'>
+            <FaInstagram className="instagram-icon" />
+          </a>
+          <a href="https://in.linkedin.com/company/e-cesakjsce" aria-label="LinkedIn" target='_blank'>
+            <FaLinkedin className="linkedin-icon" />
+          </a>
           </div>
         </div>
       </div>

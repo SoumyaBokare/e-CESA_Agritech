@@ -93,19 +93,21 @@
   font-size: 30px;
   transition: color 0.3s ease; /* Smooth transition effect */
 }
-
-.social-links a:hover {
-  color: white; /* Default hover color */
+.instagram-icon {
+  transition: color 0.3s ease; /* Smooth transition effect */
 }
 
 /* Instagram Hover Effect */
-.social-links a.instagram:hover {
-  color: #e1306c !important; /* Instagram pink */
+.instagram-icon:hover {
+  color: #e1306c;
 }
 
-/* LinkedIn Hover Effect */
-.social-links a.linkedin:hover {
-  color: #0077b5 !important; /* LinkedIn blue */
+.instagram-icon {
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+.linkedin-icon:hover {
+  color: #0077b5;
 }
 
 /* Footer Bottom */
@@ -138,31 +140,30 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px; /* Adjusted for better visibility */
-  height: 60px; /* Adjusted for better visibility */
-  background-color: #11711e; /* Ensuring it matches your theme */
-  color: white; /* Ensuring contrast for visibility */
+  width: 50px; /* Decreased size */
+  height: 50px; /* Decreased size */
+  background-color: #11711e;
+  color: white;
   border: none;
-  border-radius: 50%; /* Circular appearance */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Increased shadow for better depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  z-index: 1000; /* Ensuring it is above all other content */
 }
 
 .scroll-to-top:hover {
   background-color: #0e751a; /* Slightly darker on hover for better feedback */
-  transform: scale(1.5); /* Slight enlargement on hover */
+  transform: scale(1.2); /* Slight enlargement on hover */
   color: #ffffff; /* Ensure text color remains visible on hover */
 }
 
 /* Icon size adjustment, if necessary */
 .scroll-to-top svg {
-  width: 44px; /* Adjust icon size for better visibility */
-  height: 44px; /* Adjust icon size for better visibility */
+  width: 40px; /* Adjust icon size for better visibility */
+  height: 40px; /* Adjust icon size for better visibility */
 }
 
 
