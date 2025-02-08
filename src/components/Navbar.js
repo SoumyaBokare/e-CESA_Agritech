@@ -7,20 +7,19 @@ const Navbar = ({ isNightMode }) => {
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsScrolled(currentScrollY > 100);
 
-      // Toggle visibility based on scroll direction and location
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsHidden(true); // Hide when scrolling up, after 100px
+        setIsHidden(true);
       } else {
-        setIsHidden(false); // Show when scrolling down or within the first 100px
+        setIsHidden(false);
       }
 
-      // Update the last scroll position
       setLastScrollY(currentScrollY);
     };
 
@@ -33,8 +32,9 @@ const Navbar = ({ isNightMode }) => {
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    setIsMenuOpen(false); // Close menu on selection
   };
-
+  
   return (
     <div className={`custom-navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'navbar-hidden' : ''}`}>
       <div className="nav-container">
@@ -42,7 +42,12 @@ const Navbar = ({ isNightMode }) => {
           <img src={logo1} alt="Logo 1" className="nav-logo" />
           <img src={logo2} alt="Logo 2" className="nav-logo" />
         </div>
-        <div className="nav-pills">
+        
+        <button className="hamburger-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? '✖' : '☰'}
+        </button>
+        
+        <div className={`nav-pills ${isMenuOpen ? 'menu-open' : ''}`}>
           <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('home')}>Home</button>
           <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('timeline')}>Timeline</button>
           <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('prizes')}>Prizes</button>

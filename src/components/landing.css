@@ -53,28 +53,15 @@
   z-index: 10; /* To ensure it's above other elements */
 }
 
-.presentation h1, .presentation h2, .presentation p, .presentation button {
+.presentation h1,
+.presentation h2,
+.presentation p,
+.presentation button {
   margin: 10px 0;
 }
 
-.presentation h2{
+.presentation h2 {
   font-size: 4rem;
-
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
 }
 
 .landing-text {
@@ -91,7 +78,6 @@ button:hover {
 .landing-container img#moon {
   mix-blend-mode: screen;
 }
-
 
 .landing-container img#comet {
   transform: translateX(-10rem);
@@ -142,10 +128,10 @@ button:hover {
 }
 .theme-switch {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 80px;
+  right: 30px;
   z-index: 100;
-  display: flex; 
+  display: flex;
   align-items: center;
 }
 
@@ -193,7 +179,9 @@ button:hover {
   display: none;
 }
 
-.theme-switch__checkbox:checked + .theme-switch__container .theme-switch__circle-container {
+.theme-switch__checkbox:checked
+  + .theme-switch__container
+  .theme-switch__circle-container {
   transform: translateX(25px);
 }
 
@@ -224,7 +212,7 @@ button:hover {
   transition: var(--circle-transition);
   pointer-events: none;
 }
-.ecesa{
+.ecesa {
   height: 20rem;
 }
 
@@ -248,7 +236,8 @@ button:hover {
 .theme-switch__moon {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
-  transform: translate3d(0, -100%, 0);  width: var(--sun-moon-diameter);
+  transform: translate3d(0, -100%, 0);
+  width: var(--sun-moon-diameter);
   height: var(--sun-moon-diameter);
   background-color: var(--moon-bg);
   border-radius: inherit;
@@ -398,29 +387,29 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-  .landing-container img#moon, .landing-container img#comet {
+  .landing-container img#moon,
+  .landing-container img#comet {
     width: 15vw; /* Slightly larger in smaller devices for visibility */
   }
   /* Additional styling for different positions or effects on scroll */
   .landing-container img {
     transition: transform 0.5s ease; /* Smooth transition for transform effects */
   }
-  
+
   /* Ensuring text and buttons are visible and appropriately sized on smaller screens */
   .presentation {
     font-size: 1rem; /* Adjust font size for smaller screens */
   }
-  
+
   .presentation h2 {
     font-size: 1.5rem; /* Larger text for headline */
   }
-  
+
   .presentation button {
     padding: 10px 20px; /* Smaller padding on smaller screens */
     font-size: 16px; /* Slightly smaller font size */
   }
 }
-
 
 @media (max-width: 768px) {
   .landing-images {
@@ -428,11 +417,89 @@ button:hover {
   }
 
   /* Adjusting scroll transformations for small screens */
-  .landing-images#moon, .landing-images#comet {
-    transform: translateY(var(--scroll-transform-y)); /* Variable set in JavaScript based on scroll */
+  .landing-images#moon,
+  .landing-images#comet {
+    transform: translateY(
+      var(--scroll-transform-y)
+    ); /* Variable set in JavaScript based on scroll */
   }
 
-  .landing-images#trees, .landing-images#clouds, .landing-images#farm {
-    transform: translateY(calc(var(--scroll-transform-y) * 0.5)); /* Slower movement for background elements */
+  .landing-images#trees,
+  .landing-images#clouds,
+  .landing-images#farm {
+    transform: translateY(
+      calc(var(--scroll-transform-y) * 0.5)
+    ); /* Slower movement for background elements */
   }
+}
+
+.Btn-container {
+  width: fit-content;
+  height: 10vh;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px #e1e1e1;
+  transition: 0.2s;
+}
+.inner-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 8px 15px;
+  gap: 50px;
+  transition: 0.2s;
+}
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.text p {
+  font-size: 1.2em;
+  font-weight: 600;
+  font-family: "Kanit", sans-serif;
+  color: rgb(124, 255, 121);
+}
+.text .pro {
+  background-color: white;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  transition: 0.2s;
+}
+.icon svg {
+  width: 15px;
+}
+.Btn-container:active {
+  transform: scale(1);
+}
+.Btn-container:active .inner-wrapper {
+  transform: scale(0.97);
+}
+.Btn-container:hover .icon {
+  transform: rotate(0deg);
+}
+
+.hackathon-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
 }

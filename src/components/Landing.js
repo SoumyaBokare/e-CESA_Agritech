@@ -8,6 +8,7 @@ import LightTrees from "../assets/images/light_trees.png";
 import LightClouds from "../assets/images/light_clouds.png";
 import Comet from "../assets/images/comet.png";
 import EcesaLogo from "../assets/icons/ecesa.png"; // Import the ecesa.png image
+import CountdownTimer from "./CountdownTimer";
 
 const Landing = () => {
   const starsRef = useRef(null);
@@ -70,9 +71,22 @@ const Landing = () => {
     <div className={`landing-container ${isNightMode ? 'night-mode' : 'day-mode'}`}>
       <Navbar isNightMode={isNightMode} />
       <div className="presentation">
-        <img src={EcesaLogo} alt="ECESA Logo" className="ecesa" /> {/* Add the ecesa.png image */}
-        <h2>Agri-Tech Hackathon 2025</h2>
-        <button onClick={() => window.open("https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830", "_blank")}>Register Now</button>
+        <img src={EcesaLogo} alt="ECESA Logo" className="ecesa" /> 
+        <h2 className="relative mix-blend-difference">Agri-Tech Hackathon 2025</h2>
+        <button class="Btn-container" onClick={() => window.open("https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830", "_blank")}>
+          <span class="inner-wrapper">
+            <span class="text">
+              <p className="pro">REGISTER</p>
+            </span>
+            <span class="icon">
+              <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                ></path>
+              </svg>
+            </span>
+          </span>
+        </button>
       </div>
       <div className="theme-switch">
         <input

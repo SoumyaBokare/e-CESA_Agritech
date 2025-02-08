@@ -22,32 +22,9 @@ const App = () => {
 
   return (
     <>
-      <Landing />
       <Navbar />
-      <section id="domain">
-        <About />
-      </section>
-      <div className="landing">
-        <main className="min-h-screen bg-gray-100">
-          <section id="domain">
-            <Domain />
-          </section>
-        </main>
-        <section id="timeline">
-          <Timeline events={timelineEvents} />
-        </section>
-        <section id="prizes">
-          <PrizeCards />
-        </section>
-        <section id="rules">
-          <Rules />
-        </section>
-        <section id="sponsors">
-          <Sponsors />
-        </section>
-        <section id="footer">
-          <Footer />
-        </section>
+      <div id="landing">
+        <Landing />
       </div>
       <Chicken />
     </>
