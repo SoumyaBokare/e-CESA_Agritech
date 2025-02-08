@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.rules-container:hover {
+  background-color: #1a1a1a !important; /* Ensure background color remains the same on hover */
+}
+
 .faq-title {
   font-size: 3rem;
   font-weight: bold;

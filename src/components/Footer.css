@@ -140,8 +140,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px; /* Decreased size */
-  height: 50px; /* Decreased size */
+  width: 50px;
+  height: 50px;
   background-color: #11711e;
   color: white;
   border: none;
@@ -155,15 +155,16 @@
 }
 
 .scroll-to-top:hover {
-  background-color: #0e751a; /* Slightly darker on hover for better feedback */
-  transform: scale(1.2); /* Slight enlargement on hover */
-  color: #ffffff; /* Ensure text color remains visible on hover */
+  background-color: #0e751a;
+  transform: scale(1.2);
+  color: white;
 }
 
 /* Icon size adjustment, if necessary */
 .scroll-to-top svg {
-  width: 40px; /* Adjust icon size for better visibility */
-  height: 40px; /* Adjust icon size for better visibility */
+  width: 50px; /* Increased icon size */
+  height: 50px; /* Increased icon size */
+  color: white; /* Ensuring it remains white */
 }
 
 
@@ -185,11 +186,15 @@
   .footer-section.right {
     align-items: center;
   }
-
-  .scroll-to-top {
-    bottom: 15px;
-    right: 15px;
-    font-size: 20px;
-    padding: 8px;
-  }
+    .scroll-to-top {
+      bottom: 15px;
+      right: 15px;
+      width: 45px; /* Slightly smaller for better fit */
+      height: 45px;
+    }
+  
+    .scroll-to-top svg {
+      width: 40px; /* Adjusting size proportionally */
+      height: 40px;
+    }
 }

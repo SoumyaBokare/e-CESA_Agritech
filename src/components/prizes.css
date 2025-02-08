@@ -164,7 +164,7 @@
   }
 
   .card.active {
-    transform: none;
+    transform: translateY(calc(var(--index) * 100px)) scale(1); /* Animate vertically */
   }
 
   .amount,
