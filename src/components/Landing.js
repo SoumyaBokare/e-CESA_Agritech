@@ -72,7 +72,7 @@ const Landing = () => {
       <Navbar isNightMode={isNightMode} />
       <div className="presentation">
         <img src={EcesaLogo} alt="ECESA Logo" className="ecesa" /> 
-        <h2 className="relative mix-blend-difference">Agri-Tech Hackathon 2025</h2>
+        <h2 className="hackathon-name">Agri-Tech Hackathon 2025</h2>
         <button class="Btn-container" onClick={() => window.open("https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830", "_blank")}>
           <span class="inner-wrapper">
             <span class="text">

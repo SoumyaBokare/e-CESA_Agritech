@@ -64,16 +64,6 @@
   font-size: 4rem;
 }
 
-.landing-text {
-  position: fixed; /* Changed from absolute to fixed */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Align center */
-  font-size: 3rem;
-  color: #fff;
-  text-align: center;
-  z-index: 10; /* Ensure it's above other content */
-}
 
 .landing-container img#moon {
   mix-blend-mode: screen;
@@ -497,9 +487,7 @@
   transform: rotate(0deg);
 }
 
-.hackathon-name {
+.presentation h2 {
   font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 20px;
+  
 }
