@@ -7,8 +7,7 @@ import LightFarm from "../assets/images/light_farm.png";
 import LightTrees from "../assets/images/light_trees.png";
 import LightClouds from "../assets/images/light_clouds.png";
 import Comet from "../assets/images/comet.png";
-import EcesaLogo from "../assets/icons/ecesa.png"; // Import the ecesa.png image
-import CountdownTimer from "./CountdownTimer";
+import Countdown from "./CountdownTimer";
 
 const Landing = () => {
   const starsRef = useRef(null);
@@ -17,7 +16,6 @@ const Landing = () => {
   const treesRef = useRef(null);
   const cloudsRef = useRef(null);
   const cometRef = useRef(null);
-  const ecesaRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
 
   const toggleNightMode = () => {
@@ -75,7 +73,6 @@ const Landing = () => {
         if (cloudsRef.current)
           cloudsRef.current.src = require("../assets/images/dark_clouds.png");
         if (cometRef.current) cometRef.current.style.display = "block";
-        if (ecesaRef.current) ecesaRef.current.style.color = "white";
       }, duration);
     } else {
       setTimeout(() => {
@@ -90,7 +87,6 @@ const Landing = () => {
         if (cloudsRef.current)
           cloudsRef.current.src = require("../assets/images/light_clouds.png");
         if (cometRef.current) cometRef.current.style.display = "none";
-        if (ecesaRef.current) ecesaRef.current.style.color = "black";
       }, duration);
     }
   }, [isNightMode]);
@@ -101,10 +97,14 @@ const Landing = () => {
     >
       <Navbar isNightMode={isNightMode} />
       <div className="presentation">
-        <div id="ecesa" ref={ecesaRef}>KJ SOMAIYA SCHOOL OF ENGINEERING</div>
-        <h2 className="hackathon-name">Agri-Tech Hackathon 2025</h2>
+        <div id="ecesa " className={`e-cesa hackathon-name ${isNightMode ? "night-mode" : "day-mode"} style={{ marginTop: '80px' }}` }>KJSSE | e-CESA </div> <br></br>
+        <div id="ecesa " className={`e-cesa hackathon-name ${isNightMode ? "night-mode" : "day-mode"} style={{ marginTop: '80px' }}`}>Presents</div>
+
+        <h2 className={`hackathon-name ${isNightMode ? "night-mode" : "day-mode"}`}>Agri-Tech Hackathon 2025</h2>
+        <p className={`registration-text ${isNightMode ? "night-mode" : "day-mode"}`}>REGISTRATION CLOSES IN:</p>
+        <Countdown />
         <button
-          class="Btn-container"
+          className="Btn-container"
           onClick={() =>
             window.open(
               "https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830",
@@ -112,11 +112,11 @@ const Landing = () => {
             )
           }
         >
-          <span class="inner-wrapper">
-            <span class="text">
+          <span className="inner-wrapper">
+            <span className="text">
               <p className="pro">REGISTER</p>
             </span>
-            <span class="icon">
+            <span className="icon">
               <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
                 <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
               </svg>

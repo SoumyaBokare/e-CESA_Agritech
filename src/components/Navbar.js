@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './navbar.css';
 import logo1 from '../assets/icons/trust.png'; // Replace with the actual path to your image
 import logo2 from '../assets/icons/somaiya.png'; // Replace with the actual path to your image
+import logo3 from '../assets/icons/ecesa.png'; // Replace with the actual path to your image
 
 const Navbar = ({ isNightMode }) => {
   const [lastScrollY, setLastScrollY] = useState(window.scrollY);
@@ -41,13 +42,14 @@ const Navbar = ({ isNightMode }) => {
         <div className="nav-logos">
           <img src={logo1} alt="Logo 1" className="nav-logo" />
           <img src={logo2} alt="Logo 2" className="nav-logo" />
+          <img src={logo3} alt="Logo 3" className="nav-logo logo3" /> {/* Added class 'logo3' */}
         </div>
         
         <button className="hamburger-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? '✖' : '☰'}
         </button>
         
-        <div  className={`nav-pills ${isMenuOpen ? 'menu-open' : ''}`}>
+        <div className={`nav-pills ${isMenuOpen ? 'menu-open' : ''}`}>
           <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('home')}>Home</button>
           <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('timeline')}>Timeline</button>
           <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('prizes')}>Prizes</button>

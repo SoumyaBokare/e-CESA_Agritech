@@ -4,6 +4,7 @@
   padding: 20px;
   font-family: 'Kanit', sans-serif;
   background-color: #1a1a1a;
+  margin-top: 200px; /* Increased margin-top to ensure the heading is visible */
 }
 
 .timeline-header {
@@ -11,8 +12,153 @@
   margin-bottom: 50px;
 }
 
+.faq-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    width: 100%; /* Ensure it takes full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-title {
+    font-size: 1.5rem; /* Adjust font size for very small screens */
+    width: 100%; /* Ensure it takes full width */
+  }
+}
+
+.letter {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: Kanit, sans-serif;
+}
+
+.letter:nth-child(1):hover {
+  color: #FF6B6B;
+  transform: rotate(-10deg) scale(1.2);
+  font-family: 'Arial Black', sans-serif;
+}
+
+.letter:nth-child(2):hover {
+  color: #4ECDC4;
+  transform: translateY(-10px) scale(1.2);
+  font-family: 'Courier', monospace;
+}
+
+.letter:nth-child(3):hover {
+  color: #FFE66D;
+  transform: rotate(10deg) scale(1.2);
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.letter:nth-child(4):hover {
+  color: #FF8C42;
+  transform: skewX(-10deg) scale(1.2);
+  font-family: 'Garamond', serif;
+}
+
+.letter:nth-child(5):hover {
+  color: #9B59B6;
+  transform: scale(1.3);
+  font-family: 'Lucida Console', monospace;
+}
+
+.letter:nth-child(6):hover {
+  color: #3498DB;
+  transform: translateX(10px) scale(1.2);
+  font-family: 'Verdana', sans-serif;
+}
+
+.letter:nth-child(7):hover {
+  color: #E74C3C;
+  transform: rotate(-5deg) scale(1.2);
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.letter:nth-child(8):hover {
+  color: #1ABC9C;
+  transform: translateY(10px) scale(1.2);
+  font-family: 'Book Antiqua', serif;
+}
+
+.letter:nth-child(9):hover {
+  color: #F39C12;
+  transform: skewY(-10deg) scale(1.2);
+  font-family: 'Impact', fantasy;
+}
+
+.letter:nth-child(10):hover {
+  color: #2ECC71;
+  transform: translateX(-10px) scale(1.2);
+  font-family: 'Palatino Linotype', serif;
+}
+
+.letter:nth-child(11):hover {
+  color: #D35400;
+  transform: rotate(15deg) scale(1.2);
+  font-family: 'Tahoma', sans-serif;
+}
+
+.letter:nth-child(12):hover {
+  color: #8E44AD;
+  transform: translateY(-5px) scale(1.2);
+  font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.letter:nth-child(13):hover {
+  color: #2980B9;
+  transform: skewX(10deg) scale(1.2);
+  font-family: 'Times New Roman', serif;
+}
+
+.letter:nth-child(14):hover {
+  color: #16A085;
+  transform: scale(1.3);
+  font-family: 'Century Gothic', sans-serif;
+}
+
+.letter:nth-child(15):hover {
+  color: #C0392B;
+  transform: rotate(-10deg) scale(1.2);
+  font-family: 'Helvetica', sans-serif;
+}
+
+.letter:nth-child(16):hover {
+  color: #27AE60;
+  transform: translateX(5px) scale(1.2);
+  font-family: 'Brush Script MT', cursive;
+}
+
+.letter:nth-child(17):hover {
+  color: #E67E22;
+  transform: skewY(5deg) scale(1.2);
+  font-family: 'Rockwell', serif;
+}
+
+.letter:nth-child(18):hover {
+  color: #E67E22;
+  transform: skewY(5deg) scale(1.2);
+  font-family: 'Impact', serif;
+}
+
+.letter:nth-child(19):hover {
+  color: #E67E22;
+  transform: skewY(5deg) scale(1.2);
+  font-family: 'Times', serif;
+}
+
 .timeline-header h2 {
-  color: #4CAF50;
+  color: #a8ff00;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -44,7 +190,7 @@
   top: 0;
   width: 100%;
   height: var(--progress);
-  background-color: #4CAF50;
+  background-color: #a8ff00;
   transition: height 0.3s ease;
 }
 
@@ -85,7 +231,7 @@
 }
 
 .timeline-item.visible .timeline-dot {
-  background: #4CAF50;
+  background: #a8ff00;
 }
 
 .timeline-content {

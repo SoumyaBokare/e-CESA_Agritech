@@ -32,7 +32,14 @@ const PrizeCards = () => {
 
   return (
     <div className="container" id="prizes">
-      <h2>Prize Pool</h2>
+      <h1 className="faq-title">
+        <span className="letter">P</span>
+        <span className="letter">R</span>
+        <span className="letter">I</span>
+        <span className="letter">Z</span>
+        <span className="letter">E</span>
+        <span className="letter">S</span>
+      </h1>
       <div className="cards-container">
         {cards.map((card, index) => (
           <div key={index} className={`card ${card.className} ${isActive ? 'active' : ''}`}

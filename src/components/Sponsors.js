@@ -8,8 +8,8 @@ const sponsors = [
   { id: 4, name: "Sponsor 4", logo: require("../assets/sponsors/bkt.png") },
   { id: 5, name: "Sponsor 5", logo: require("../assets/sponsors/unstop.png") },
   { id: 6, name: "Sponsor 6", logo: require("../assets/sponsors/innosight.png") },
-  { id: 7, name: "Sponsor 7", logo: require("../assets/sponsors/study_vista.png") },
-  { id: 8, name: "Sponsor 8", logo: require("../assets/sponsors/kiaar.png") }, // Updated ID to be unique
+  { id: 7, name: "Sponsor 7", logo: require("../assets/sponsors/vista.png"), className: "large-sponsor" },
+  { id: 8, name: "Sponsor 8", logo: require("../assets/sponsors/kiaar.png"), className: "large-sponsor" }, // Updated ID to be unique
 ];
 
 const SponsorScroll = () => {
@@ -19,11 +19,24 @@ const SponsorScroll = () => {
   return (
     <>
       <div className="sponsor-heading">
-        <h2>Our Sponsors</h2>
+        <h1 className="faq-title">
+          <span className="letter">O</span>
+          <span className="letter">U</span>
+          <span className="letter">R</span>
+          <span>&nbsp;</span> 
+          <span className="letter">S</span>
+          <span className="letter">P</span>
+          <span className="letter">O</span>
+          <span className="letter">N</span>
+          <span className="letter">S</span>
+          <span className="letter">E</span>
+          <span className="letter">R</span>
+          <span className="letter">S</span>
+        </h1>
       </div>
       <div className="sponsor-scroll left-to-right">
         {sponsors.concat(sponsors).map((sponsor, index) => (
-          <div key={`right-${index}`} className="sponsor-logo">
+          <div key={`right-${index}`} className={`sponsor-logo ${sponsor.className || ""}`}>
             <div className="sponsor-card">
               <img src={sponsor.logo} alt={sponsor.name} />
             </div>
@@ -32,7 +45,7 @@ const SponsorScroll = () => {
       </div>
       <div className="sponsor-scroll right-to-left">
         {reversedSponsors.concat(reversedSponsors).map((sponsor, index) => (
-          <div key={`left-${index}`} className="sponsor-logo">
+          <div key={`left-${index}`} className={`sponsor-logo ${sponsor.className || ""}`}>
             <div className="sponsor-card">
               <img src={sponsor.logo} alt={sponsor.name} />
             </div>

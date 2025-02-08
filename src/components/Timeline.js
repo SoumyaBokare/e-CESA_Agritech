@@ -83,7 +83,28 @@ const Timeline = () => {
   return (
     <div className="timeline-container">
       <div className="timeline-header">
-        <h2>HACKATHON TIMELINE</h2>
+      <h1 className="faq-title">
+        <span className="letter">H</span>
+        <span className="letter">A</span>
+        <span className="letter">C</span>
+        <span className="letter">K</span>
+        <span className="letter">A</span>
+        <span className="letter">T</span>
+        <span className="letter">H</span>
+        <span className="letter">O</span>
+        <span className="letter">N</span>
+        <span>&nbsp;</span> 
+        <span>&nbsp;</span> 
+
+        <span className="letter">T</span>
+        <span className="letter">I</span>
+        <span className="letter">M</span>
+        <span className="letter">E</span>
+        <span className="letter">L</span>
+        <span className="letter">I</span>
+        <span className="letter">N</span>
+        <span className="letter">E</span>
+      </h1>
         <p>Join us on this exciting journey of innovation and creativity. Mark these dates on your calendar and prepare to showcase your skills!</p>
       </div>
 

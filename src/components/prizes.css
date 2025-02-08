@@ -89,6 +89,58 @@
   width: 300px;
 }
 
+.faq-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.letter {
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: Kanit, sans-serif;
+}
+
+.letter:nth-child(1):hover {
+  color: #FF6B6B;
+  transform: rotate(-10deg) scale(1.2);
+  font-family: 'Impact', fantasy;
+}
+
+.letter:nth-child(2):hover {
+  color: #4ECDC4;
+  transform: translateY(-10px) scale(1.2);
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.letter:nth-child(3):hover {
+  color: #FFE66D;
+  transform: rotate(10deg) scale(1.2);
+  font-family: 'Chalkduster', fantasy;
+}
+
+.letter:nth-child(4):hover {
+  color: #FF8C42;
+  transform: skewX(-10deg) scale(1.2);
+  font-family: 'Courier New', monospace;
+}
+
+.letter:nth-child(5):hover {
+  color: #9B59B6;
+  transform: scale(1.3);
+  font-family: 'Georgia', serif;
+}
+
+.letter:nth-child(6):hover {
+  color: #3498DB;
+  transform: translateX(10px) scale(1.2);
+  font-family: 'Verdana', sans-serif;
+}
+
 @media (max-width: 1024px) {
   .cards-container {
     max-width: 600px;

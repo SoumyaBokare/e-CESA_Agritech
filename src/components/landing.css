@@ -48,7 +48,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white; 
   z-index: 10; 
 }
 
@@ -57,6 +56,32 @@
 .presentation p,
 .presentation button {
   margin: 10px 0;
+  color: #171715; 
+
+}
+
+.presentation h2 {
+  font-size: 4.2rem !important;
+
+}
+
+.registration-text.day-mode {
+  color: black;
+}
+
+.registration-text.night-mode {
+  color: #a8ff00;
+}
+
+
+.ecesa-text.day-mode,
+.hackathon-name.day-mode {
+  color: black;
+}
+
+.ecesa-text.night-mode,
+.hackathon-name.night-mode {
+  color: #a8ff00;
 }
 
 .presentation h2 {

@@ -17,6 +17,13 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -24,9 +31,9 @@ const Footer = () => {
         <div className="footer-section left">
           <h2 className="footer-title">Quick Links</h2>
           <div className="footer-links">
-            <a href="/about">About</a>
-            <a href="/timeline">Timeline</a>
-            <a href="/prizes">Prizes</a>
+            <a href="#about" onClick={() => scrollToSection('home')}>About</a>
+            <a href="#timeline" onClick={() => scrollToSection('timeline')}>Timeline</a>
+            <a href="#prizes" onClick={() => scrollToSection('prizes')}>Prizes</a>
           </div>
         </div>
 
@@ -43,6 +50,9 @@ const Footer = () => {
             <a href="tel:+919969594585" className="contact-item">
               <FaPhone /> +91 9969594585
             </a>
+            <a href="tel:+917208639630" className="contact-item">
+              <FaPhone /> +91 7208639630
+            </a>
           </div>
         </div>
 
@@ -50,12 +60,12 @@ const Footer = () => {
         <div className="footer-section right">
           <h2 className="footer-title">Follow Us</h2>
           <div className="social-links">
-          <a href="https://www.instagram.com/ecesa_kjsce/" aria-label="Instagram" target='_blank'>
-            <FaInstagram className="instagram-icon" />
-          </a>
-          <a href="https://in.linkedin.com/company/e-cesakjsce" aria-label="LinkedIn" target='_blank'>
-            <FaLinkedin className="linkedin-icon" />
-          </a>
+            <a href="https://www.instagram.com/ecesa_kjsce/" aria-label="Instagram" target='_blank'>
+              <FaInstagram className="instagram-icon" />
+            </a>
+            <a href="https://in.linkedin.com/company/e-cesakjsce" aria-label="LinkedIn" target='_blank'>
+              <FaLinkedin className="linkedin-icon" />
+            </a>
           </div>
         </div>
       </div>

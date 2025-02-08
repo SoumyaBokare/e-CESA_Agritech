@@ -22,7 +22,8 @@
   display: inline-block;
   transition: all 0.3s ease;
   cursor: pointer;
-  font-family: Arial, sans-serif; /* Same initial font for all letters */
+  font-family: 'Kanit', sans-serif; /* Same initial font for all letters */
+  color: #a8ff00
 }
 
 /* F letter hover */

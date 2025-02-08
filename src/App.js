@@ -9,7 +9,7 @@ import Timeline from "./components/Timeline";
 import PrizeCards from "./components/PrizeCards";
 import "./App.css";
 import Chicken from "./components/Chicken";
-import Gallery from "./components/Gallery";
+import Domain from "./components/Domain";
 
 const App = () => {
   const timelineEvents = [
@@ -30,7 +30,7 @@ const App = () => {
       <div className="landing">
         <main className="min-h-screen bg-gray-100">
           <section id="domain">
-            <Gallery />
+            <Domain />
           </section>
         </main>
         <section id="timeline">
