@@ -11,30 +11,42 @@
   top: 0;
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 20px 0;
+  justify-content: center; /* Ensures content is centered */
+  align-items: center;
+  padding: 10px 20px;
   background: transparent;
   transition: background 0.4s ease-in-out, transform 0.6s ease-in-out;
-  z-index: 10;
+  z-index: 11;
 }
 
 .scrolled {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.9); /* Dark background on scroll */
 }
 
 .navbar-hidden {
-  transform: translateY(-100%);
+  transform: translateY(-100%); /* Hide navbar */
 }
 
 .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  max-width: 1200px; /* Controls maximum width */
+}
+
+.nav-logos {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-logo {
+  height: 40px; /* Adjust logo size */
 }
 
 .nav-pills {
   display: flex;
-  gap: 30px;
+  gap: 5px; /* Space between navigation links */
 }
 
 .nav-link {
@@ -43,12 +55,44 @@
   font-size: 16px;
   font-family: "Kanit", sans-serif;
   text-transform: uppercase;
-  color: white;
+  color: black;
   cursor: pointer;
   transition: color 0.4s ease, transform 0.3s ease;
 }
 
+.scrolled .nav-link,
+.night-mode .nav-link {
+  color: white; /* Color changes for different modes */
+}
+
+.day-mode .nav-link {
+  color: black;
+}
+
 .nav-link:hover {
   color: gray;
-  transform: scale(1.1);
+  transform: scale(1.1); /* Hover effect */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 4px; /* Adjust padding for smaller screens */
+  }
+
+  .nav-logos {
+    flex-direction: row;
+    margin-right: auto; /* Keep logos on the left */
+  }
+
+  .nav-pills {
+    flex-direction: row; /* Keep nav links horizontal */
+    margin-left: auto; /* Push nav links to the right */
+    gap: 3px; /* Reduce gap between nav links for smaller screens */
+  }
+
+  .nav-link {
+    font-size: 12px; /* Adjust font size for smaller screens */
+    padding: 5px; /* Better touch targets */
+  }
 }

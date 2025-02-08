@@ -65,7 +65,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <div className="footer-bottom-text">
-          © 2024-25 ECESA KJSCE. All rights reserved
+          © 2024-25 e-CESA KJSCE. All rights reserved
         </div>
       </div>
 

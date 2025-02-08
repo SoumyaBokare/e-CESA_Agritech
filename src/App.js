@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Rules from "./components/Rules";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
-import HackathonDetails from "./components/hackathondetail";
+import About from './components/About'
 import Domain from "./components/Domain";
 import Landing from "./components/Landing";
 import Timeline from "./components/Timeline";
@@ -25,7 +25,7 @@ const App = () => {
       <Landing />
       <Navbar />
       <section id="domain">
-        <HackathonDetails />
+        <About />
       </section>
       <div className="landing">
         <main className="min-h-screen bg-gray-100">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './gallery.css'; // Ensure this import points to the right CSS file location
+import './domain.css'; // Ensure this import points to the right CSS file location
 
-const Gallery = () => {
+const Domain = () => {
   const [activeImage, setActiveImage] = useState(null);
   const [moreInfoContent, setMoreInfoContent] = useState('');
 
@@ -10,6 +10,7 @@ const Gallery = () => {
       src: require("../assets/images/farm.jpg"),
       alt: "farm close up",
       className: "farm",
+      domainName: "Precision Agriculture",
       problemStatement: "Precision Agriculture",
       moreInfo: `
         <h3>AI/IoT-Enabled Pest Detection and Management:</h3>
@@ -34,6 +35,7 @@ const Gallery = () => {
       src: require("../assets/images/supply.png"),
       alt: "Soil close up",
       className: "soil",
+      domainName: "Supply Chain and Market Access",
       problemStatement: "Supply Chain and Market Access",
       moreInfo: `
         <h3>Blockchain-Based Produce Traceability System:</h3>
@@ -58,6 +60,7 @@ const Gallery = () => {
       src: require("../assets/images/robot.jpg"),
       alt: "Robot",
       className: "robot",
+      domainName: "Biofuel",
       problemStatement: "Biofuel",
       moreInfo: `
         <h3>AI-Optimized Biomass Collection System:</h3>
@@ -81,6 +84,7 @@ const Gallery = () => {
       src: require("../assets/images/farmer.jpg"),
       alt: "Green USB device",
       className: "usb",
+      domainName: "Farmers' Empowerment and Education",
       problemStatement: "Farmers' Empowerment and Education",
       moreInfo: `
         <h3>Mobile-Based Farmer Training Platform:</h3>
@@ -106,6 +110,7 @@ const Gallery = () => {
       src: require("../assets/images/soil.jpg"),
       alt: "Drone in sky",
       className: "drone",
+      domainName: "Open Innovation",
       problemStatement: "Open Innovation",
       moreInfo: `
         <h3>Open Innovation:</h3>
@@ -125,17 +130,21 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-container">
-      {images.map((image, index) => (
-        <div key={index} className={`gallery-item ${image.className}`} onClick={() => handleMoreInfoClick(index)}>
-          <img src={image.src} alt={image.alt} />
-          <div className="overlay">
-            <div className="text">{image.problemStatement}</div>
-            <button className="more-info-button">More Info</button>
+    <div>
+      <div className="domains-title">
+        <h2>DOMAINS</h2>
+      </div>
+      <div className="gallery-container">
+        {images.map((image, index) => (
+          <div key={index} className={`gallery-item ${image.className}`} onClick={() => handleMoreInfoClick(index)}>
+            <img src={image.src} alt={image.alt} />
+            <div className="domain-name">{image.domainName}</div>
+            <div className="overlay">
+              <button className="more-info-button">More Info</button>
+            </div>
           </div>
-        </div>
-      ))}
-
+        ))}
+      </div>
       {activeImage && (
         <div className="info-frame">
           <button className="close-button" onClick={handleCloseClick}>X</button>
@@ -146,4 +155,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Domain;

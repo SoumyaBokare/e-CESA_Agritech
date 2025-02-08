@@ -1,45 +1,73 @@
 import React, { useState } from "react";
-import "./rules.css"; // Make sure to create this CSS file
+import "./rules.css";
 
 const rulesData = {
   "Registration Questions": [
     {
       question: "What is the competition registration deadline, and how do I register?",
-      answer: "The registration deadline is [date]. You can register on our website by following the registration link."
+      answer: 'The registration deadline is March 01, 2025. You can register <a href="https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830" target="_blank" rel="noopener noreferrer">here</a>.'
     },
     {
-      question: "Is there assistance with team formation or finding team members?",
-      answer: "Yes, we provide a team formation platform where you can find and join teams."
+      question: "Where is the hackathon being held?",
+      answer: "The event will be held at K. J. Somaiya School of Engineering, Vidyavihar, Mumbai."
     },
     {
-      question: "What are the eligibility criteria for registration?",
-      answer: "Participants must be over 18 years old and currently enrolled in a university or a recent graduate."
+      question: "Can I get help with forming a team?",
+      answer: "Yes, you can contact the organizers for assistance or join the networking groups provided after registration."
     },
     {
-      question: "What steps do I need to follow to complete the registration?",
-      answer: "Complete the registration form, verify your email, and join the event Discord server."
+      question: "Who can participate?",
+      answer: "Undergraduate students from any discipline are eligible to participate. Teams can include members from different colleges."
+    },
+    {
+      question: "What is the team size requirement?",
+      answer: "Teams must consist of 3 to 5 members."
+    },
+    {
+      question: "Can a single team submit multiple projects?",
+      answer: "No, each team is allowed to submit only one project during the hackathon."
+    },
+    {
+      question: "What happens after registration?",
+      answer: "After registering, you will receive an email with detailed guidelines for abstract submission and further updates."
+    },
+    {
+      question: "Can we make changes to our team after registration?",
+      answer: "Yes, changes to team members or structure are allowed after the registration is finalized if the management team is provided with a valid reason."
     }
   ],
   "Technical Questions": [
     {
-      question: "What are the competition development topics and challenges?",
-      answer: "The competition focuses on AI, blockchain, and IoT development challenges."
+      question: "What are the development topics for this hackathon?",
+      answer: "The tracks include Precision Agriculture, Supply Chain Optimization, Farmers’ Empowerment, Biofuel Innovation, and Open Innovation in Agriculture."
     },
     {
-      question: "What kind of projects can I develop for this hackathon?",
-      answer: "You can develop any project that fits within the competition's themes and guidelines."
+      question: "What technologies are recommended for project development?",
+      answer: "Participants are encouraged to use AI, IoT, Blockchain, and Data Analytics. Other innovative tools are also welcome."
     },
     {
-      question: "Will a development server and database environment be provided?",
-      answer: "Yes, we will provide a development server and database environment for all participants."
+      question: "Will any development server or database environment be provided?",
+      answer: "No, participants must use their own resources, tools, and environments for development."
+    },
+    {
+      question: "What kind of projects are expected?",
+      answer: "Projects should focus on solving real-world agricultural challenges through innovative, scalable, and impactful solutions."
+    },
+    {
+      question: "Is prior experience with AI, IoT, or Blockchain required?",
+      answer: "No, prior experience is not mandatory, but familiarity with these technologies will be beneficial."
     },
     {
       question: "What is the required development environment for the competition?",
-      answer: "You can use any development environment you are comfortable with, but we recommend using VS Code."
+      answer: "You can use any development environment or tools that suit your project needs. Ensure your setup is ready before the hackathon."
     },
     {
-      question: "What code editor is recommended for this hackathon?",
-      answer: "We recommend using Visual Studio Code for its versatility and extensive plugin support."
+      question: "What format should the final submission follow?",
+      answer: "Submissions must include a working prototype, documentation, and a brief presentation. Detailed guidelines will be shared during the event."
+    },
+    {
+      question: "Will there be mentorship during the hackathon?",
+      answer: "Yes, mentors will be available to guide teams and help troubleshoot technical challenges during the event."
     }
   ]
 };
@@ -69,8 +97,7 @@ const Rules = () => {
                   <button className="faq-question" onClick={() => toggleFAQ(uniqueIndex)}>
                     {item.question} <span>{openIndex === uniqueIndex ? "−" : "+"}</span>
                   </button>
-                  <div className={`faq-answer ${openIndex === uniqueIndex ? 'open' : ''}`}>
-                    {item.answer}
+                  <div className={`faq-answer ${openIndex === uniqueIndex ? 'open' : ''}`} dangerouslySetInnerHTML={{ __html: item.answer }}>
                   </div>
                 </div>
               );

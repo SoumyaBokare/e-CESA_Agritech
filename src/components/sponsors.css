@@ -1,11 +1,4 @@
-.sponsor-scroll-container {
-  width: 100%;
-  overflow: hidden;
-  background-color: #fff; /* Or any preferred background color */
-  padding: 20px 0;
-}
-
-.sponsor-heading{
+.sponsor-heading {
   font-size: 3rem;
   margin-bottom: 20px;
   text-align: center;
@@ -23,13 +16,12 @@
 
 .sponsor-logo {
   flex: 0 0 auto;
-  width: 200px; /* Adjust based on the actual logo size */
+  width: 200px;
   padding: 0 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px 0px 60px 0px;
-
+  margin: 10px 0px 40px 0px;
 }
 
 .sponsor-card {
@@ -50,11 +42,11 @@
 }
 
 @keyframes scroll-right-to-left {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-100%, 0, 0); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes scroll-left-to-right {
-  0% { transform: translate3d(-100%, 0, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }

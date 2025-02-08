@@ -28,9 +28,64 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   pointer-events: none;
+}
+
+.countdown-timer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5em;
+  color: #fff;
+  z-index: 10;
+}
+
+.presentation {
+  position: absolute;
+  top: 50%; /* Adjusted from something like 50% to move it lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Assuming you want the text in white */
+  z-index: 10; /* To ensure it's above other elements */
+}
+
+.presentation h1, .presentation h2, .presentation p, .presentation button {
+  margin: 10px 0;
+}
+
+.presentation h2{
+  font-size: 4rem;
+
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.landing-text {
+  position: fixed; /* Changed from absolute to fixed */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Align center */
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  z-index: 10; /* Ensure it's above other content */
 }
 
 .landing-container img#moon {
@@ -78,13 +133,18 @@
   --back-clouds-color: #aacadf;
   --transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
   --circle-transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
-}
-
-.theme-switch {
-  position: fixed; 
-  top: 10px;
+  position: absolute;
+  top: 20px;
   right: 20px;
-  z-index: 12; 
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+.theme-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
   display: flex; 
   align-items: center;
 }
@@ -112,6 +172,9 @@
     0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
   transition: var(--transition);
   position: relative;
+  will-change: transform;
+  display: flex;
+  align-items: center;
 }
 
 .theme-switch__container::before {
@@ -130,6 +193,10 @@
   display: none;
 }
 
+.theme-switch__checkbox:checked + .theme-switch__container .theme-switch__circle-container {
+  transform: translateX(25px);
+}
+
 .theme-switch__circle-container {
   z-index: 1;
   width: var(--circle-container-diameter);
@@ -138,7 +205,7 @@
   position: absolute;
   left: var(--circle-container-offset);
   top: var(--circle-container-offset);
-  border-radius: var(--container-radius);
+  border-radius: 50%;
   -webkit-box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
     inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
     0 0 0 0.625em rgba(255, 255, 255, 0.1),
@@ -149,10 +216,16 @@
     0 0 0 1.25em rgba(255, 255, 255, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
+  display: inline-block;
+  transition: transform 0.3s ease;
+
   display: flex;
   -webkit-transition: var(--circle-transition);
   transition: var(--circle-transition);
   pointer-events: none;
+}
+.ecesa{
+  height: 20rem;
 }
 
 .theme-switch__sun-moon-container {
@@ -175,8 +248,7 @@
 .theme-switch__moon {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
-  transform: translateX(100%);
-  width: var(--sun-moon-diameter);
+  transform: translate3d(0, -100%, 0);  width: var(--sun-moon-diameter);
   height: var(--sun-moon-diameter);
   background-color: var(--moon-bg);
   border-radius: inherit;
@@ -190,6 +262,7 @@
   position: absolute;
   top: 135%;
   left: 130%;
+  will-change: transform;
 }
 
 .theme-switch__spot {
@@ -270,6 +343,7 @@
   height: auto;
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  will-change: transform;
 }
 
 .theme-switch__checkbox:checked + .theme-switch__container {
@@ -321,4 +395,44 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .landing-container img#moon, .landing-container img#comet {
+    width: 15vw; /* Slightly larger in smaller devices for visibility */
+  }
+  /* Additional styling for different positions or effects on scroll */
+  .landing-container img {
+    transition: transform 0.5s ease; /* Smooth transition for transform effects */
+  }
+  
+  /* Ensuring text and buttons are visible and appropriately sized on smaller screens */
+  .presentation {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+  
+  .presentation h2 {
+    font-size: 1.5rem; /* Larger text for headline */
+  }
+  
+  .presentation button {
+    padding: 10px 20px; /* Smaller padding on smaller screens */
+    font-size: 16px; /* Slightly smaller font size */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .landing-images {
+    transition: transform 0.3s ease-out; /* Faster transition for smoother effect */
+  }
+
+  /* Adjusting scroll transformations for small screens */
+  .landing-images#moon, .landing-images#comet {
+    transform: translateY(var(--scroll-transform-y)); /* Variable set in JavaScript based on scroll */
+  }
+
+  .landing-images#trees, .landing-images#clouds, .landing-images#farm {
+    transform: translateY(calc(var(--scroll-transform-y) * 0.5)); /* Slower movement for background elements */
+  }
 }

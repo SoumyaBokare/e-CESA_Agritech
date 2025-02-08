@@ -138,25 +138,33 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 40px; /* Ensure equal width and height */
-  height: 40px; 
-  background-color: #ffffff; /* Change color as needed */
-  color: #11711e;
+  width: 60px; /* Adjusted for better visibility */
+  height: 60px; /* Adjusted for better visibility */
+  background-color: #11711e; /* Ensuring it matches your theme */
+  color: white; /* Ensuring contrast for visibility */
   border: none;
-  border-radius: 50%; /* Makes it perfectly circular */
+  border-radius: 50%; /* Circular appearance */
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Increased shadow for better depth */
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1000; /* Ensuring it is above all other content */
 }
 
 .scroll-to-top:hover {
-  background-color: #0c5a18;
-  color: white;
-  transform: scale(1.1);
+  background-color: #0e751a; /* Slightly darker on hover for better feedback */
+  transform: scale(1.5); /* Slight enlargement on hover */
+  color: #ffffff; /* Ensure text color remains visible on hover */
 }
+
+/* Icon size adjustment, if necessary */
+.scroll-to-top svg {
+  width: 44px; /* Adjust icon size for better visibility */
+  height: 44px; /* Adjust icon size for better visibility */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
