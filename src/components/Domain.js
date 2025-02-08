@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './gallery.css'; // Ensure this import points to the right CSS file location
+import React, { useState } from "react";
+import "./gallery.css"; // Ensure this import points to the right CSS file location
 
 const Gallery = () => {
   const [activeImage, setActiveImage] = useState(null);
-  const [moreInfoContent, setMoreInfoContent] = useState('');
+  const [moreInfoContent, setMoreInfoContent] = useState("");
 
   const images = [
     {
@@ -28,7 +28,7 @@ const Gallery = () => {
         <p>Description: Design a smart irrigation system that leverages soil moisture
         sensors and weather forecasts to deliver precise water amounts, promoting water
         stewardship and preventing over-irrigation.</p>
-      `
+      `,
     },
     {
       src: require("../assets/images/supply.png"),
@@ -52,7 +52,7 @@ const Gallery = () => {
         <p>Description: Innovate packaging materials embedded with sensors to monitor
         freshness and environmental conditions, thereby reducing spoilage and
         extending the shelf life of perishable goods.</p>
-      `
+      `,
     },
     {
       src: require("../assets/images/robot.jpg"),
@@ -75,7 +75,7 @@ const Gallery = () => {
         <p>Description: Establish a cooperative model where local farmers can contribute
         biomass and share in the benefits of biofuel production, promoting sustainable
         energy and providing additional income streams.</p>
-      `
+      `,
     },
     {
       src: require("../assets/images/farmer.jpg"),
@@ -100,7 +100,7 @@ const Gallery = () => {
         <p>Description: Establish a service providing hyper-local weather forecasts and
         farming advisories via SMS or app notifications, enabling farmers to make
         informed decisions.</p>
-      `
+      `,
     },
     {
       src: require("../assets/images/soil.jpg"),
@@ -110,24 +110,29 @@ const Gallery = () => {
       moreInfo: `
         <h3>Open Innovation:</h3>
         <p>Participants are welcome to propose disruptive ideas in any agri-tech-related domain.</p>
-      `
+      `,
     },
   ];
 
   const handleMoreInfoClick = (index) => {
     setActiveImage(images[index]);
     setMoreInfoContent(images[index].moreInfo);
+    console.log(images[index].moreInfo);
   };
 
   const handleCloseClick = () => {
     setActiveImage(null);
-    setMoreInfoContent('');
+    setMoreInfoContent("");
   };
 
   return (
     <div className="gallery-container">
       {images.map((image, index) => (
-        <div key={index} className={`gallery-item ${image.className}`} onClick={() => handleMoreInfoClick(index)}>
+        <div
+          key={index}
+          className={`gallery-item ${image.className}`}
+          onClick={() => handleMoreInfoClick(index)}
+        >
           <img src={image.src} alt={image.alt} />
           <div className="overlay">
             <div className="text">{image.problemStatement}</div>
@@ -135,12 +140,22 @@ const Gallery = () => {
           </div>
         </div>
       ))}
-
       {activeImage && (
-        <div className="info-frame">
-          <button className="close-button" onClick={handleCloseClick}>X</button>
-          <div className="info-content" dangerouslySetInnerHTML={{ __html: moreInfoContent }} />
-        </div>
+        <>
+          <div className={`info-frame ${activeImage ? "active" : ""}`}>
+            <button className="close-button" onClick={handleCloseClick}>
+              X
+            </button>
+            <div
+              className="info-content"
+              dangerouslySetInnerHTML={{ __html: moreInfoContent }}
+            />
+          </div>
+          <div
+            className={`info-frame-overlay ${activeImage ? "active" : ""}`}
+            onClick={handleCloseClick}
+          ></div>
+        </>
       )}
     </div>
   );
