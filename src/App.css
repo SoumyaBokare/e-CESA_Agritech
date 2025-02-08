@@ -4,8 +4,8 @@ html, body {
   font-family: 'Kanit', sans-serif !important;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #1a1a1a;
+  color: #a8ff00;
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 

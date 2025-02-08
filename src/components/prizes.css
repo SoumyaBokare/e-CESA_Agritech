@@ -6,6 +6,7 @@
   align-items: center;
   padding-top: 10px;
   margin-bottom: 100px;
+  background: #1a1a1a;
 }
 
 .container h2 {
@@ -117,35 +118,42 @@
     margin-right: 100px;
   }
 }
-
 @media (max-width: 768px) {
   .cards-container {
-    max-width: 100%;
-    height: auto;
-    transform: translateX(0px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center cards vertically */
+    width: 100%; /* Full width to use the available space */
+    transform: none; /* Remove any transformations */
+    margin: 0 auto; /* Center container horizontally */
+    height: auto; /* Adjust height automatically based on content */
+    padding: 20px 0; /* Padding for aesthetic spacing */
   }
 
   .card {
-    width: 200px;
-    height: 300px;
+    position: static; /* Ensure cards are not absolutely positioned */
+    width: 80%; /* Suitable width for smaller devices */
+    margin: 20px 0; /* Space between cards */
+    height: auto; /* Auto height to fit content */
+    opacity: 1; /* Full opacity */
+    transition: none; /* No transitions on scroll */
+    display: flex; /* Flex layout for internal centering */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    transform: none; /* Ensure no transform affects positioning */
   }
 
-  .card.active {
-    transform: translate(calc(var(--index) * 200px), 0) scale(1);
+  .card.first {
+    order: -1; /* Winner card at the top */
   }
 
-  .amount,
-  .rank,
-  .position {
-    font-size: 1.8rem;
+  .card.second {
+    order: 0; /* Second place follows */
   }
 
-  .position {
-    font-size: 1.5rem;
-  }
-
-  .second {
-    margin-right: 50px;
+  .card.third {
+    order: 1; /* Third place at the bottom */
   }
 }
 
@@ -153,27 +161,54 @@
   .cards-container {
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Ensure vertical alignment */
+    width: 100%; /* Use full container width */
+    height: auto; /* Adjust height based on content */
     transform: none;
+    margin: 0 auto; /* Center the container */
+    padding: 20px 0; /* Add padding to avoid touching the edges */
   }
 
   .card {
     position: static;
-    width: 90%;
-    margin-bottom: 20px;
-    transform: none;
+    width: 80%; /* Slightly reduce width for better spacing */
+    height: auto; /* Auto-adjust height */
+    margin: 20px 0; /* Increase space between cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1; /* Ensure full opacity */
+    transition: none; /* Disable any transitions */
   }
 
-  .card.active {
-    transform: translateY(calc(var(--index) * 100px)) scale(1); /* Animate vertically */
+  .amount, .rank, .position {
+    font-size: 1.8rem; /* Adjust font size */
+    text-align: center; /* Ensure text is centered */
   }
 
-  .amount,
-  .rank,
+  .amount {
+    margin-bottom: 10px; /* Space below the amount */
+  }
+
+  .rank {
+    margin-bottom: 5px; /* Space below the rank */
+  }
+
   .position {
-    font-size: 1.5rem;
+    margin-bottom: 10px; /* Space below the position */
   }
 
-  .position {
-    font-size: 1.2rem;
+  /* Ensure all cards are visible and centered when scrolling into view */
+  .container {
+    overflow: visible; /* Change or remove overflow properties if needed */
+    padding-top: 50px; /* Add padding on top for better spacing */
+    padding-bottom: 50px; /* Add padding at the bottom */
+  }
+
+  /* Disabling any scroll-triggered transformations or opacity changes */
+  .card.active, .card {
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

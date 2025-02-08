@@ -47,13 +47,13 @@ const Navbar = ({ isNightMode }) => {
           {isMenuOpen ? '✖' : '☰'}
         </button>
         
-        <div className={`nav-pills ${isMenuOpen ? 'menu-open' : ''}`}>
-          <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('home')}>Home</button>
-          <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('timeline')}>Timeline</button>
-          <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('prizes')}>Prizes</button>
-          <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('rules')}>Rules</button>
-          <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('sponsors')}>Sponsors</button>
-          <button className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('footer')}>Contact</button>
+        <div  className={`nav-pills ${isMenuOpen ? 'menu-open' : ''}`}>
+          <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('home')}>Home</button>
+          <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('timeline')}>Timeline</button>
+          <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('prizes')}>Prizes</button>
+          <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('rules')}>Rules</button>
+          <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('sponsors')}>Sponsors</button>
+          <button id="navbar-links" className={`nav-link ${isNightMode ? 'night-mode' : 'day-mode'}`} onClick={() => scrollToSection('footer')}>Contact</button>
         </div>
       </div>
     </div>

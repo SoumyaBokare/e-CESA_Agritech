@@ -9,14 +9,17 @@ const sponsors = [
   { id: 5, name: "Sponsor 5", logo: require("../assets/sponsors/unstop.png") },
   { id: 6, name: "Sponsor 6", logo: require("../assets/sponsors/innosight.png") },
   { id: 7, name: "Sponsor 7", logo: require("../assets/sponsors/study_vista.png") },
-  { id: 7, name: "Sponsor 7", logo: require("../assets/sponsors/kiaar.png") },
+  { id: 8, name: "Sponsor 8", logo: require("../assets/sponsors/kiaar.png") }, // Updated ID to be unique
 ];
 
 const SponsorScroll = () => {
+  // Reverse the sponsors array for the second row
+  const reversedSponsors = [...sponsors].reverse(); // Make a shallow copy and reverse it
+
   return (
     <>
       <div className="sponsor-heading">
-        <h2>OUR SPONSORS</h2>
+        <h2>Our Sponsors</h2>
       </div>
       <div className="sponsor-scroll left-to-right">
         {sponsors.concat(sponsors).map((sponsor, index) => (
@@ -28,7 +31,7 @@ const SponsorScroll = () => {
         ))}
       </div>
       <div className="sponsor-scroll right-to-left">
-        {sponsors.concat(sponsors).map((sponsor, index) => (
+        {reversedSponsors.concat(reversedSponsors).map((sponsor, index) => (
           <div key={`left-${index}`} className="sponsor-logo">
             <div className="sponsor-card">
               <img src={sponsor.logo} alt={sponsor.name} />

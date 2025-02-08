@@ -1,33 +1,63 @@
+.header-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.header-container h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.header-container h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  background-color: #1a1a1a;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #4CAF50; /* Agriculture green */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.domains-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
 .domains-title h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  text-align: center;
-  margin: 10px 0;
-}
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 200px);
-  gap: 1rem;
-  padding: 2rem;
-  height: 650px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  position: relative;
-  overflow: visible;
+  font-size: 2rem;
+  margin: 0;
 }
 
-/* Gallery Items */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  height: 90vh;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+}
+
 .gallery-item {
   position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  border-radius: 45px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-item img {
@@ -35,13 +65,20 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  border-radius: 45px;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  border-radius: 45px;
 }
 
-/* Overlay Styling */
+.gallery-item:hover {
+  z-index: 10;
+  transform: scale(1.05); /* Slightly enlarge the item */
+  border-radius: 45px;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -49,91 +86,79 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  transition: opacity 0.3s ease;
+  border-radius: 45px;
 }
 
-/* Text and Button Container */
-.overlay .text {
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.text {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
+  padding: 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
 }
 
-/* More Info Button */
 .more-info-button {
+  display: none;
+  margin-top: 10px;
   padding: 10px 20px;
+  font-family: 'kanit', sans-serif;
   font-size: 1rem;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #4CAF50; /* Agriculture green */
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-.gallery-item:hover .more-info-button {
-  opacity: 1;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .more-info-button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* Darker green */
+  transform: scale(1.1); /* Slightly enlarge the button */
 }
 
-/* Info Frame with Animations */
+.gallery-item:hover .more-info-button {
+  display: block;
+}
+
 .info-frame {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  width: 1200px;
-  height: 650px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.info-frame.active {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  visibility: visible;
-}
-
-.info-frame-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.info-frame-overlay.active {
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 1;
-  visibility: visible;
+.info-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.info-content h3 {
+  color: #4CAF50; 
+  margin-bottom: 10px;
+}
+
+.info-content p {
+  margin-bottom: 20px;
 }
 
 .close-button {
@@ -151,49 +176,89 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 101;
-  transform: scale(0.9);
-  transition: all 0.2s ease;
 }
 
 .close-button:hover {
   background-color: #d32f2f;
-  transform: scale(1);
 }
 
-.info-content {
-  max-width: 90%;
-  max-height: 90%;
-  overflow-y: auto;
-  padding: 20px;
-  color: #333;
-  line-height: 1.6;
+.domains-title h2 {
+  color: #4CAF50;
+  font-size: 2.5rem;
+  background-color: #1a1a1a;
 }
 
-/* Grid Positions */
+.domain-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .domain-name {
+  opacity: 0;
+}
+
+/* Specific grid positions */
 .farm {
-  grid-column: 2 / 2;
-  grid-row: 1 / 3;
-}
-
-.soil {
-  grid-column: 3 / 5;
-  grid-row: 1 / 2;
-}
-
-.robot {
-  grid-column: 3 / 5;
-  grid-row: 2 / 4;
-}
-
-.usb {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
 }
 
+.soil {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.robot {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.usb {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
 .drone {
-  grid-column: 1 / 3;
-  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.leaf {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background-image: url('../assets/images/leaf.png'); */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.leaf.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.leaf.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.leaf.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.leaf.bottom-right {
+  bottom: 20px;
+  right: 20px;
 }
 
 @media (max-width: 768px) {
@@ -202,11 +267,30 @@
     grid-template-rows: repeat(4, 150px);
     gap: 0.5rem;
     padding: 1rem;
-    height: auto;
   }
 
-  .info-frame {
-    width: 90%;
-    height: 80%;
+  .farm {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .soil {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .robot {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .usb {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .drone {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
   }
 }

@@ -6,6 +6,12 @@ const PrizeCards = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (window.innerWidth <= 768) {
+        // If the screen is small, always keep isActive false to disable animations
+        setIsActive(false);
+        return; // Exit early to avoid further execution
+      }
+
       const prizesElement = document.getElementById('prizes');
       const prizesTop = prizesElement.getBoundingClientRect().top;
       const viewportHeight = window.innerHeight;

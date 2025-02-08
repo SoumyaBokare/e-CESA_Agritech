@@ -17,6 +17,7 @@ const Landing = () => {
   const treesRef = useRef(null);
   const cloudsRef = useRef(null);
   const cometRef = useRef(null);
+  const ecesaRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
 
   const toggleNightMode = () => {
@@ -32,15 +33,30 @@ const Landing = () => {
       const treesSpeed = 0.4;
       const cloudsSpeed = 0.2;
 
-      if (starsRef.current) starsRef.current.style.transform = `translateY(${scrollY * starsSpeed}px)`;
-      if (moonRef.current) moonRef.current.style.transform = `translateY(${scrollY * moonSpeed}px)`;
-      if (farmRef.current) farmRef.current.style.transform = `translateY(${scrollY * farmSpeed}px)`;
-      if (treesRef.current) treesRef.current.style.transform = `translateY(${scrollY * treesSpeed}px)`;
-      if (cloudsRef.current) cloudsRef.current.style.transform = `translateY(${scrollY * cloudsSpeed}px)`;
+      if (starsRef.current)
+        starsRef.current.style.transform = `translateY(${
+          scrollY * starsSpeed
+        }px)`;
+      if (moonRef.current)
+        moonRef.current.style.transform = `translateY(${
+          scrollY * moonSpeed
+        }px)`;
+      if (farmRef.current)
+        farmRef.current.style.transform = `translateY(${
+          scrollY * farmSpeed
+        }px)`;
+      if (treesRef.current)
+        treesRef.current.style.transform = `translateY(${
+          scrollY * treesSpeed
+        }px)`;
+      if (cloudsRef.current)
+        cloudsRef.current.style.transform = `translateY(${
+          scrollY * cloudsSpeed
+        }px)`;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -48,41 +64,61 @@ const Landing = () => {
 
     if (isNightMode) {
       setTimeout(() => {
-        if (starsRef.current) starsRef.current.src = require("../assets/images/night.png");
-        if (moonRef.current) moonRef.current.src = require("../assets/images/moon.png");
-        if (farmRef.current) farmRef.current.src = require("../assets/images/dark_farm.png");
-        if (treesRef.current) treesRef.current.src = require("../assets/images/dark_trees.png");
-        if (cloudsRef.current) cloudsRef.current.src = require("../assets/images/dark_clouds.png");
+        if (starsRef.current)
+          starsRef.current.src = require("../assets/images/night.png");
+        if (moonRef.current)
+          moonRef.current.src = require("../assets/images/moon.png");
+        if (farmRef.current)
+          farmRef.current.src = require("../assets/images/dark_farm.png");
+        if (treesRef.current)
+          treesRef.current.src = require("../assets/images/dark_trees.png");
+        if (cloudsRef.current)
+          cloudsRef.current.src = require("../assets/images/dark_clouds.png");
         if (cometRef.current) cometRef.current.style.display = "block";
+        if (ecesaRef.current) ecesaRef.current.style.color = "white";
       }, duration);
     } else {
       setTimeout(() => {
-        if (starsRef.current) starsRef.current.src = require("../assets/images/day.png");
-        if (moonRef.current) moonRef.current.src = require("../assets/images/sun.png");
-        if (farmRef.current) farmRef.current.src = require("../assets/images/light_farm.png");
-        if (treesRef.current) treesRef.current.src = require("../assets/images/light_trees.png");
-        if (cloudsRef.current) cloudsRef.current.src = require("../assets/images/light_clouds.png");
+        if (starsRef.current)
+          starsRef.current.src = require("../assets/images/day.png");
+        if (moonRef.current)
+          moonRef.current.src = require("../assets/images/sun.png");
+        if (farmRef.current)
+          farmRef.current.src = require("../assets/images/light_farm.png");
+        if (treesRef.current)
+          treesRef.current.src = require("../assets/images/light_trees.png");
+        if (cloudsRef.current)
+          cloudsRef.current.src = require("../assets/images/light_clouds.png");
         if (cometRef.current) cometRef.current.style.display = "none";
+        if (ecesaRef.current) ecesaRef.current.style.color = "black";
       }, duration);
     }
   }, [isNightMode]);
 
   return (
-    <div className={`landing-container ${isNightMode ? 'night-mode' : 'day-mode'}`}>
+    <div
+      className={`landing-container ${isNightMode ? "night-mode" : "day-mode"}`}
+    >
       <Navbar isNightMode={isNightMode} />
       <div className="presentation">
-        <img src={EcesaLogo} alt="ECESA Logo" className="ecesa" /> 
+        <div id="ecesa" ref={ecesaRef}>KJ SOMAIYA SCHOOL OF ENGINEERING</div>
         <h2 className="hackathon-name">Agri-Tech Hackathon 2025</h2>
-        <button class="Btn-container" onClick={() => window.open("https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830", "_blank")}>
+        <button
+          class="Btn-container"
+          onClick={() =>
+            window.open(
+              "https://unstop.com/hackathons/agri-tech-hackathon-k-j-somaiya-college-of-engineering-kjsce-mumbai-1378830",
+              "_blank"
+            )
+          }
+        >
           <span class="inner-wrapper">
             <span class="text">
               <p className="pro">REGISTER</p>
             </span>
             <span class="icon">
               <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                ></path>
+                <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
               </svg>
             </span>
           </span>
@@ -104,12 +140,49 @@ const Landing = () => {
           </div>
         </label>
       </div>
-      <img src={Day} className="landing-images" id="stars" ref={starsRef} alt="Stars"/>
-      <img src={Sun} className="landing-images" id="moon" ref={moonRef} alt="Moon" />
-      <img src={LightFarm} className="landing-images" id="farm" ref={farmRef} alt="Farm" />
-      <img src={LightTrees} className="landing-images" id="trees" ref={treesRef} alt="Trees" />
-      <img src={LightClouds} className="landing-images" id="clouds" ref={cloudsRef} alt="Clouds" />
-      <img src={Comet} className="landing-images" id="comet" ref={cometRef} alt="Comet" style={{ display: "none" }} />
+      <img
+        src={Day}
+        className="landing-images"
+        id="stars"
+        ref={starsRef}
+        alt="Stars"
+      />
+      <img
+        src={Sun}
+        className="landing-images"
+        id="moon"
+        ref={moonRef}
+        alt="Moon"
+      />
+      <img
+        src={LightFarm}
+        className="landing-images"
+        id="farm"
+        ref={farmRef}
+        alt="Farm"
+      />
+      <img
+        src={LightTrees}
+        className="landing-images"
+        id="trees"
+        ref={treesRef}
+        alt="Trees"
+      />
+      <img
+        src={LightClouds}
+        className="landing-images"
+        id="clouds"
+        ref={cloudsRef}
+        alt="Clouds"
+      />
+      <img
+        src={Comet}
+        className="landing-images"
+        id="comet"
+        ref={cometRef}
+        alt="Comet"
+        style={{ display: "none" }}
+      />
     </div>
   );
 };

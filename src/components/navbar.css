@@ -2,7 +2,7 @@
 
 :root {
   --navbar-height: 70px;
-  --navbar-bg-transparent: transparent;
+  --navbar-bg-transparent: rgba(255, 255, 255, 0.2);
   --navbar-bg-scrolled: rgba(0, 0, 0, 0.85);
   --navbar-backdrop-filter: blur(8px);
   --text-color-light: #ffffff;
@@ -29,7 +29,7 @@
   padding: 0 24px;
   background: var(--navbar-bg-transparent);
   transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1000;
+  z-index: 20;
 }
 
 .scrolled {
@@ -78,7 +78,7 @@
   color: var(--text-color-light);
   cursor: pointer;
   padding: 8px;
-  z-index: 1001;
+  z-index: 10;
 }
 
 .nav-pills {
@@ -142,7 +142,6 @@
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 15px;
     color: var(--hover-color);
     z-index: 10;
   }

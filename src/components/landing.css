@@ -26,9 +26,8 @@
   transition: opacity 0.5s ease-in-out;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   pointer-events: none;
 }
@@ -45,12 +44,12 @@
 
 .presentation {
   position: absolute;
-  top: 50%; /* Adjusted from something like 50% to move it lower */
+  top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white; /* Assuming you want the text in white */
-  z-index: 10; /* To ensure it's above other elements */
+  color: white; 
+  z-index: 10; 
 }
 
 .presentation h1,
@@ -63,7 +62,6 @@
 .presentation h2 {
   font-size: 4rem;
 }
-
 
 .landing-container img#moon {
   mix-blend-mode: screen;
@@ -91,7 +89,7 @@
 
 .theme-switch {
   --toggle-size: 30px;
-  --container-width: 4.5rem;
+  --container-width: 5.5rem;
   --container-height: 2.75rem;
   --container-radius: 6.25rem;
   --container-light-bg: #3d7eae;
@@ -172,7 +170,7 @@
 .theme-switch__checkbox:checked
   + .theme-switch__container
   .theme-switch__circle-container {
-  transform: translateX(25px);
+  transform: translateX(0.1rem);
 }
 
 .theme-switch__circle-container {
@@ -202,8 +200,21 @@
   transition: var(--circle-transition);
   pointer-events: none;
 }
-.ecesa {
-  height: 20rem;
+
+#ecesa {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.hackathon-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .theme-switch__sun-moon-container {
@@ -377,7 +388,6 @@
 }
 
 @media (max-width: 768px) {
-  .landing-container img#moon,
   .landing-container img#comet {
     width: 15vw; /* Slightly larger in smaller devices for visibility */
   }
@@ -489,5 +499,4 @@
 
 .presentation h2 {
   font-size: 2.5rem;
-  
 }
