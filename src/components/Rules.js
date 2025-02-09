@@ -33,7 +33,7 @@ const rulesData = {
     },
     {
       question: "Can we make changes to our team after registration?",
-      answer: "Yes, changes to team members or structure are allowed after the registration is finalized if the management team is provided with a valid reason."
+      answer: "No, changes to team members or structure are not allowed after the registration is finalized."
     }
   ],
   "Technical Questions": [
@@ -60,10 +60,6 @@ const rulesData = {
     {
       question: "What is the required development environment for the competition?",
       answer: "You can use any development environment or tools that suit your project needs. Ensure your setup is ready before the hackathon."
-    },
-    {
-      question: "What format should the final submission follow?",
-      answer: "Submissions must include a working prototype, documentation, and a brief presentation. Detailed guidelines will be shared during the event."
     },
     {
       question: "Will there be mentorship during the hackathon?",

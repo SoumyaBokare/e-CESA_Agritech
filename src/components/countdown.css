@@ -44,18 +44,18 @@ h2 strong {
 
 /* Countdown */
 .countdown {
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .bloc-time {
-  float: left;    
-  margin-right: 45px;    
-  text-align: center;    
-
-  &:last-child {
-    margin-right: 0;
-  }
+  flex: 1 1 100px;
+  margin: 10px;
+  text-align: center;
 }
 
 .count-title {
@@ -68,17 +68,12 @@ h2 strong {
 
 .figure {
   position: relative;
-  float: left;
   height: 110px;
   width: 100px;
-  margin-right: 10px;
+  margin: 0 auto;
   background-color: #fff;
   border-radius: 8px; 
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2), inset 2px 4px 0 0 rgba(255, 255, 255, .08);
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   >span {
     position: absolute;
@@ -167,5 +162,29 @@ h2 strong {
       right: 0;
       margin: auto;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .figure {
+    height: 90px;
+    width: 80px;
+  }
+
+  .figure > span {
+    font-size: 4.5em;
+    line-height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .figure {
+    height: 70px;
+    width: 60px;
+  }
+
+  .figure > span {
+    font-size: 3.5em;
+    line-height: 70px;
   }
 }

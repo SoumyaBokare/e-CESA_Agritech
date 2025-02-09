@@ -1,7 +1,6 @@
 .sponsor-heading {
-  font-size: 3rem;
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .sponsor-logo.large-sponsor img {
@@ -31,17 +30,30 @@
 .faq-title {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   gap: 5px;
+  flex-wrap: wrap; /* Allow wrapping */
 }
-
 .letter {
   display: inline-block;
   transition: all 0.3s ease;
   cursor: pointer;
   font-family: Kanit, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+    width: 100%; /* Ensure it takes full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-title {
+    font-size: 1.5rem; /* Adjust font size for very small screens */
+    width: 100%; /* Ensure it takes full width */
+  }
 }
 
 .faq-title {
