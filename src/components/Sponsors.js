@@ -29,7 +29,7 @@ const SponsorScroll = () => {
           <span className="letter">O</span>
           <span className="letter">N</span>
           <span className="letter">S</span>
-          <span className="letter">E</span>
+          <span className="letter">O</span>
           <span className="letter">R</span>
           <span className="letter">S</span>
         </h1>

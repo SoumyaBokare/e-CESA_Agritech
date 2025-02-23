@@ -17,10 +17,13 @@ const Landing = () => {
   const cloudsRef = useRef(null);
   const cometRef = useRef(null);
   const [isNightMode, setIsNightMode] = useState(false);
+  const [showPopup, setShowPopup] = useState(true); // State for popup visibility
 
   const toggleNightMode = () => {
     setIsNightMode(!isNightMode);
   };
+
+  const closePopup = () => setShowPopup(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,13 +98,85 @@ const Landing = () => {
     <div
       className={`landing-container ${isNightMode ? "night-mode" : "day-mode"}`}
     >
+     {/* DEADLINE EXTENDED */}
+      {showPopup && (
+        <>
+          <div className="popup">
+            <button className="close-btn" onClick={closePopup}>
+              ✖
+            </button>
+            <div className="popup-content">
+              <h2 className="popup-heading">🚀 Registration Update 🚀</h2>
+              <div className="popup-divider"></div>
+              <p className="popup-message">
+                The <strong>registration deadline</strong> has been{" "}
+                <span className="highlight">extended</span> to
+                <strong> 5th March!</strong> Don’t miss your chance to
+                participate.
+              </p>
+            </div>
+          </div>
+          <div className="blur-bg"></div> {/* Blurred background overlay */}
+        </>
+      )}
+
+      {/* REGISTRATION OVER*/}
+      {/*
+      {showPopup && (
+        <>
+          <div className="popup">
+            <button className="close-btn" onClick={closePopup}>
+              ✖
+            </button>
+            <div className="popup-content">
+              <h2 className="popup-heading">⚠ Registration Closed ⚠</h2>
+              <div className="popup-divider"></div>
+              <p className="popup-message">
+                The <strong>registration period</strong> has now{" "}
+                <span className="highlight">ended</span>. Thank you for your
+                interest!
+              </p>
+            </div>
+          </div>
+          <div className="blur-bg"></div> 
+        </>
+      )}
+         
+      */}
+
       <Navbar isNightMode={isNightMode} />
       <div className="presentation">
-        <div id="ecesa " className={`e-cesa hackathon-name ${isNightMode ? "night-mode" : "day-mode"} style={{ marginTop: '80px' }}` }>KJSSE | e-CESA </div> <br></br>
-        <div id="ecesa " className={`e-cesa hackathon-name ${isNightMode ? "night-mode" : "day-mode"} style={{ marginTop: '80px' }}`}>Presents</div>
-
-        <h2 className={`hackathon-name ${isNightMode ? "night-mode" : "day-mode"}`}>Agri-Tech Hackathon 2025</h2>
-        <p className={`registration-text ${isNightMode ? "night-mode" : "day-mode"}`}>REGISTRATION CLOSES IN:</p>
+        <div
+          id="ecesa "
+          className={`e-cesa hackathon-name ${
+            isNightMode ? "night-mode" : "day-mode"
+          } style={{ marginTop: '80px' }}`}
+        >
+          KJSSE | e-CESA{" "}
+        </div>{" "}
+        <br></br>
+        <div
+          id="ecesa "
+          className={`e-cesa hackathon-name ${
+            isNightMode ? "night-mode" : "day-mode"
+          } style={{ marginTop: '80px' }}`}
+        >
+          Presents
+        </div>
+        <h2
+          className={`hackathon-name ${
+            isNightMode ? "night-mode" : "day-mode"
+          }`}
+        >
+          Agri-Tech Hackathon 2025
+        </h2>
+        <p
+          className={`registration-text ${
+            isNightMode ? "night-mode" : "day-mode"
+          }`}
+        >
+          REGISTRATION CLOSES IN:
+        </p>
         <Countdown />
         <button
           className="Btn-container"
