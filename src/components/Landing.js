@@ -111,7 +111,7 @@ const Landing = () => {
               <p className="popup-message">
                 The <strong>registration deadline</strong> has been{" "}
                 <span className="highlight">extended</span> to
-                <strong> 5th March!</strong> Don’t miss your chance to
+                <strong> 10th March!</strong> Don’t miss your chance to
                 participate.
               </p>
             </div>
