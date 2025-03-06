@@ -10,6 +10,7 @@ const sponsors = [
   { id: 6, name: "Sponsor 6", logo: require("../assets/sponsors/innosight.png") },
   { id: 7, name: "Sponsor 7", logo: require("../assets/sponsors/vista.png"), className: "large-sponsor" },
   { id: 8, name: "Sponsor 8", logo: require("../assets/sponsors/kiaar.png"), className: "large-sponsor" }, // Updated ID to be unique
+  { id: 9, name: "Sponsor 9", logo: require("../assets/sponsors/max.png")}
 ];
 
 const SponsorScroll = () => {

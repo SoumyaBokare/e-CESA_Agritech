@@ -59,12 +59,12 @@ const Timeline = () => {
       description: 'Registrations go live and idea submission begins. Get ready to showcase your innovative ideas!',
     },
     {
-      date: '1st March 2025',
+      date: '10th March 2025',
       title: 'Last Date for Idea Submission',
       description: "Final day to submit your groundbreaking ideas. Don't miss this deadline!",
     },
     {
-      date: '10th March 2025',
+      date: '12th March 2025',
       title: 'Announcement of Phase 1 Results',
       description: 'The moment of truth! Find out if your idea has been selected for the next phase.',
     },
