@@ -8,6 +8,7 @@ import LightTrees from "../assets/images/light_trees.png";
 import LightClouds from "../assets/images/light_clouds.png";
 import Comet from "../assets/images/comet.png";
 import Countdown from "./CountdownTimer";
+import Confetti from 'react-confetti';
 
 const Landing = () => {
   const starsRef = useRef(null);
@@ -98,32 +99,15 @@ const Landing = () => {
     <div
       className={`landing-container ${isNightMode ? "night-mode" : "day-mode"}`}
     >
-     {/* DEADLINE EXTENDED */}
-      {showPopup && (
-        <>
-          <div className="popup">
-            <button className="close-btn" onClick={closePopup}>
-              ✖
-            </button>
-            <div className="popup-content">
-              <h2 className="popup-heading">🚀 Registration Update 🚀</h2>
-              <div className="popup-divider"></div>
-              <p className="popup-message">
-                The <strong>registration deadline</strong> has been{" "}
-                <span className="highlight">extended</span> to
-                <strong> 10th March!</strong> Don’t miss your chance to
-                participate.
-              </p>
-            </div>
-          </div>
-          <div className="blur-bg"></div> {/* Blurred background overlay */}
-        </>
-      )}
+      
+    
 
       {/* REGISTRATION OVER*/}
-      {/*
       {showPopup && (
         <>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1000 }}>
+            <Confetti />
+          </div>
           <div className="popup">
             <button className="close-btn" onClick={closePopup}>
               ✖
@@ -142,7 +126,6 @@ const Landing = () => {
         </>
       )}
          
-      */}
 
       <Navbar isNightMode={isNightMode} />
       <div className="presentation">
